@@ -1,4 +1,6 @@
-# Lab 00: Environment Setup — Zava Corporation AI Agent Infrastructure
+# Lab 00: Environment Setup - Zava Corporation AI Agent Infrastructure
+
+## Estimated time: 30 Minutes
 
 ## Introduction
 
@@ -8,11 +10,7 @@ Before any security configuration can begin, the Zava Corporation environment mu
 
 Every subsequent lab depends on the agents, identities, and files created here. Complete all three exercises in order before proceeding to Lab 01.
 
----
-
-   > **Note:** In a real-world environment, responsibilities like these would be distributed across multiple personas — developers, IT administrators, security administrators, and compliance officers — each operating with scoped permissions aligned to the principles of least privilege and Zero Trust.
-
----
+> **Note:** In a real-world environment, responsibilities like these would be distributed across multiple personas - developers, IT administrators, security administrators, and compliance officers - each operating with scoped permissions aligned to the principles of least privilege and Zero Trust.
 
 ## Objectives
 
@@ -26,25 +24,25 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 - Upload Zava sample business documents to the HR and Finance SharePoint sites.
 - Verify that all three agents appear as Active in the Microsoft Agent 365 Agent Registry.
 
----
-
-## Lab Duration
-
-Estimated time: **30 minutes**
-
----
 ## Exercise 0: Create the Zava HR SharePoint Site
 
-1. Open a new browser tab and navigate to `https://admin.microsoft.com`. Sign in with **ODL_User** credentials if prompted.
+1. Open a new browser tab and enter the following URL to navigate to the **Microsoft Entra admin center**. 
 
-	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-	- **Password:** <inject key="AzureAdUserPassword"></inject>
+    ```
+	https://admin.microsoft.com
+	```
+
+1. Sign in with following  credentials:
+
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
+
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>**
 
 2. In the left navigation pane, click on **Show All**, select **SharePoint** under **Admin centers**.
 
 	![](./media/L00-E0-S2.png)
 
-1. In the SharePoint admin center, from the left navigation pane, expand ****Sites** and select **Active sites**. Then, click **+ Create**.
+1. In the SharePoint admin center, from the left navigation pane, expand **Sites** and select **Active sites**. Then, click **+ Create**.
 
 	![](./media/L00-E0-S4.png)
 
@@ -91,7 +89,7 @@ Estimated time: **30 minutes**
    - **Privacy settings:** Select **Private**.
    - **Select a language:** English.
 
----
+
 
 ## Exercise 1: Configure Entra ID and Enable Copilot Studio Authors
 
@@ -114,7 +112,7 @@ Estimated time: **30 minutes**
 
 1. On the Microsoft Entra admin center welcome screen, select **Get Started**.
 
----
+
 
 ### Task 2: Create the copilotagentsecurity Security Group
 
@@ -170,7 +168,7 @@ Estimated time: **30 minutes**
 
 	![](./media/L00-E1-T2-S13.png)
 
----
+
 
 ### Task 3: Enable Access Management for Azure Resources
 
@@ -198,7 +196,7 @@ Estimated time: **30 minutes**
 
 	![](./media/L00-E1-T3-S6.png)
 
----
+
 
 ### Task 4: Assign the Privileged Role Administrator Role
 
@@ -222,7 +220,7 @@ Estimated time: **30 minutes**
 
 	![](./media/pp2.png)
 
----
+
 
 ### Task 5: Configure Copilot Studio Authors in Power Platform Admin Center
 
@@ -268,7 +266,7 @@ Estimated time: **30 minutes**
 
 	![](./media/L00-E1-T5-S6.png)
 
----
+
 
 ### Task 6: Enable Entra Agent Identity for Copilot Studio
 
@@ -298,7 +296,7 @@ Estimated time: **30 minutes**
 
       >**Note:** Enabling Entra Agent Identity allows Copilot Studio agents to be automatically assigned a unique identity in Microsoft Entra ID. This is required for identity governance, Conditional Access, and Defender for Cloud Apps integration in later labs.
 
----
+
 
 ### Task 7: Add a SharePoint Connection in the Power Apps Maker Portal
 
@@ -340,13 +338,13 @@ Estimated time: **30 minutes**
 11. Confirm that the SharePoint connection appears in the **Connections** list with a status of **Connected**.
 
 	![](./media/pp15.png)
----
+
 
 ## Exercise 2: Create the Zava Copilot Studio Agents
 
 In this exercise, you will creates all three Zava agents in Microsoft Copilot Studio. Each agent is configured with a name, description, instructions, and a SharePoint knowledge source. After publishing, each agent is shared with the designated lab user accounts. These agents serve as the live governance targets in Labs 01 through 07.
 
----
+
 
 ### Task 1: Create the Zava HR Assistant
 
@@ -448,7 +446,7 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/L00-E2-T1-S24.png)
 
----
+
 
 ### Task 2: Create the Zava Finance Agent
 
@@ -508,7 +506,7 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 15. In the **Ready to publish?** dialog, select **Publish**. Close the tab.
 
 	![](./media/image89.png)
----
+
 
 ### Task 3: Create the Zava IT Support Agent
 
@@ -586,13 +584,13 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 21. You will be redirected to **Show in Teams app store for org** and see a notification: **Your agent is submitted and waiting for approval from your Teams admin**. Close the tab.
 
----
+
 
 ## Exercise 3: Upload Zava Knowledge Files to SharePoint
 
-In this exercise, you will uploads the Zava sample business documents to the SharePoint HR and Finance sites. These files contain the sensitive data — including employee PII, payroll records, credit card numbers, and financial forecasts — that will trigger security detections and DLP policy matches throughout Labs 04, 05, and 07.
+In this exercise, you will uploads the Zava sample business documents to the SharePoint HR and Finance sites. These files contain the sensitive data - including employee PII, payroll records, credit card numbers, and financial forecasts - that will trigger security detections and DLP policy matches throughout Labs 04, 05, and 07.
 
----
+
 
 ### Task 1: Upload Files to the Zava HR SharePoint Site
 
@@ -609,8 +607,8 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 5. Select the following files and then select **Open** to upload them:
 
    | Filename | Contains |
-   |---|---|
-   | `Zava_HR_Policy_2024.docx` | Leave and disciplinary policy — no PII |
+   |||
+   | `Zava_HR_Policy_2024.docx` | Leave and disciplinary policy - no PII |
    | `Zava_Employee_Records.xlsx` | Employee IDs (format: ZVA123456), names, DOB, salary |
    | `Zava_Payroll_Q1_2025.xlsx` | Payroll data with credit card numbers in expense column |
    | `Zava_Onboarding_Guide.docx` | Standard onboarding content |
@@ -625,7 +623,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 	![](./media/l0e3t1s6.png)
 
----
+
 
 ### Task 2: Upload Files to the Zava Finance SharePoint Site
 
@@ -642,12 +640,12 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 5. Select the following files and then select **Open** to upload them:
 
    | Filename | Contains |
-   |---|---|
+   |||
    | `Zava_Budget_2025.xlsx` | Department budgets and cost centres |
    | `Zava_Invoice_Log.xlsx` | Vendor invoices with IBAN and account numbers |
    | `Zava_Expense_Report_Alex.xlsx` | Alex Wilber's expenses with Visa credit card number |
-   | `Zava_Audit_Report_2024.docx` | Internal audit findings — marked Confidential |
-   | `Zava_Contracts_External.docx` | Third-party vendor contract — externally shared |
+   | `Zava_Audit_Report_2024.docx` | Internal audit findings - marked Confidential |
+   | `Zava_Contracts_External.docx` | Third-party vendor contract - externally shared |
    | `Zava_Financial_Projections.xlsx` | Revenue forecasts with broad SharePoint permissions |
 
 6. Wait for all 6 files to finish uploading.
@@ -656,7 +654,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
     ![](./media/l0e3t2s6.png)
 
----
+
 
 ### Task 3: Verify Agents in the Microsoft Agent 365 Agent Registry
 
@@ -673,7 +671,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 3. On this page, confirm that the following three agents appear in the list. You can search for `Zava` in the search box to filter the results.
 
    | Agent Name | Status |
-   |---|---|
+   |||
    | Zava HR Assistant | Available | 
    | Zava Finance Agent | Available | 
    | Zava IT Support Agent | Available |
@@ -682,7 +680,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 	  >**Note:** It may take up to 10 minutes after publishing in Copilot Studio for agents to appear in the Agent Registry. If the agents are not visible, wait 10 minutes and then refresh the page.
 	  
----
+
 
 ## Exercise 4: Enable Organizational Setup
 
@@ -736,8 +734,8 @@ by running the following command to initiate a new Exchange Online connection us
      >**Note**: This command prepares the Exchange Online organization for advanced configuration tasks. If organization customization has already been enabled, the command returns a message indicating that no further action is required. Continue with the next step in the lab. This may take upto 24 hours to get organization custimaztion enabled
 	
 
----
+
 
 ## Summary
 
-In this lab, you completed the full environment baseline for the Zava Corporation AI security course. You created a role-assignable security group in the Microsoft Entra admin center, configured ODL User as owner and member, assigned the Privileged Role Administrator role, and enabled the group as the authorised Copilot Studio Authors group in Power Platform Admin Center. You enabled Entra Agent Identity for Copilot Studio at the environment level, added a SharePoint connection in the Power Apps maker portal, and created three Copilot Studio agents — Zava HR Assistant, Zava Finance Agent, and Zava IT Support Agent — each connected to a designated knowledge source, published across Teams and Microsoft 365 channels. You uploaded 14 sample business documents containing realistic sensitive data across the Zava HR and Finance SharePoint sites, and verified that all three agents are registered and Active in the Microsoft Agent 365 Agent Registry. The environment is now fully prepared for security configuration in Labs 01 through 07.
+In this lab, you completed the full environment baseline for the Zava Corporation AI security course. You created a role-assignable security group in the Microsoft Entra admin center, configured ODL User as owner and member, assigned the Privileged Role Administrator role, and enabled the group as the authorised Copilot Studio Authors group in Power Platform Admin Center. You enabled Entra Agent Identity for Copilot Studio at the environment level, added a SharePoint connection in the Power Apps maker portal, and created three Copilot Studio agents - Zava HR Assistant, Zava Finance Agent, and Zava IT Support Agent - each connected to a designated knowledge source, published across Teams and Microsoft 365 channels. You uploaded 14 sample business documents containing realistic sensitive data across the Zava HR and Finance SharePoint sites, and verified that all three agents are registered and Active in the Microsoft Agent 365 Agent Registry. The environment is now fully prepared for security configuration in Labs 01 through 07.

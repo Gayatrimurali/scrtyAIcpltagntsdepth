@@ -1,14 +1,14 @@
 # Lab 02: Entra Agent Identity Configuration and Monitoring
 
+### Estimated time: 10 Minutes
+
 ## Introduction
 
-Zava's security team has received confirmation from the CISO that all AI agent identities must be reviewed and brought under governance before Day 2 security policy configuration begins. The registry check in Lab 01 confirmed that agents are active and visible — but agent identity ownership has not been assigned, and no one has verified what permissions or roles these identities currently hold.
+Zava's security team has received confirmation from the CISO that all AI agent identities must be reviewed and brought under governance before Day 2 security policy configuration begins. The registry check in Lab 01 confirmed that agents are active and visible - but agent identity ownership has not been assigned, and no one has verified what permissions or roles these identities currently hold.
 
-Every Copilot Studio agent deployed in the Zava environment was automatically assigned a unique identity in Microsoft Entra ID when Entra Agent Identity was enabled in Lab 00. These identities appear in the **Agent ID** section of the Microsoft Entra admin center and can be governed like any other identity in the tenant — with owners, sponsors, access controls, audit logs, and Conditional Access policies.
+Every Copilot Studio agent deployed in the Zava environment was automatically assigned a unique identity in Microsoft Entra ID when Entra Agent Identity was enabled in Lab 00. These identities appear in the **Agent ID** section of the Microsoft Entra admin center and can be governed like any other identity in the tenant - with owners, sponsors, access controls, audit logs, and Conditional Access policies.
 
 In this lab, you will locate the Zava agent identities, review their current configuration, assign Patti Fernandes as owner of the Zava Finance Agent, and disable and re-enable the Zava HR Assistant identity to simulate an identity quarantine action.
-
----
 
 ## Objectives
 
@@ -21,28 +21,22 @@ In this lab, you will locate the Zava agent identities, review their current con
 - Disable the Zava HR Assistant identity and verify that end-user access is blocked.
 - Re-enable the Zava HR Assistant identity and confirm it returns to Active status.
 
----
-
-## Lab Duration
-
-Estimated time: **10 minutes**
-
----
-
 ## Exercise 1: Locate and Inspect the Zava Finance Agent Identity
 
 ### Task 1: Navigate to Entra Agent Identities
 
-1. Open a browser and navigate to Microsoft entra admin center and Sign in with **ODL User** credentials if prompted.
+1. Open a new browser tab and enter the following URL to navigate to the **Microsoft Entra admin center** portal. 
 
     ```
-    https://entra.microsoft.com
-    ```
- 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
- 
+	 https://admin.microsoft.com
+	 ```
 
+1. Sign in with following  credentials:
+
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
+
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>**
+ 
 2. In the left navigation pane, select **Agents**. On the **Agent identities** page, review the list of agent identities registered in the tenant.
 
 	![](./media/l02-e1-t1-s2.png)
@@ -50,7 +44,7 @@ Estimated time: **10 minutes**
 3. Confirm that the following three agents appear in the list:
 
    | Display Name | Status |
-   |---|---|
+   |||
    | Zava HR Assistant (Microsoft Copilot Studio) | Active |
    | Zava Finance Agent (Microsoft Copilot Studio) | Active |
    | Zava IT Support Agent (Microsoft Copilot Studio) | Active |
@@ -59,7 +53,7 @@ Estimated time: **10 minutes**
 
    > **Note:** Agent identities are suffixed with **(Microsoft Copilot Studio)** to indicate the platform that provisioned them. If any agent is not listed, wait five minutes and refresh the page. Agent identity provisioning can take time after initial publishing in Copilot Studio.
 
----
+
 
 ### Task 2: Review the Zava Finance Agent Identity Overview
 
@@ -68,13 +62,13 @@ Estimated time: **10 minutes**
 	![](./media/l02-e1-t2-s1.png)
 2. On the **Overview** page, review and note the following fields:
 
-   - **Status** — confirm it reads **Active**.
-   - **Sponsors** — note the user avatars currently listed as sponsors.
-   - **Owners** — confirm the current value. Note whether an owner is assigned or whether the field shows a dash ( **-** ), indicating no owner is set.
-   - **Blueprint ID** — note the GUID value.
-   - **Object ID** — note the GUID value.
-   - **Agent blueprint** — note the link text (Microsoft Copilot Studio agent identity).
-   - **Created on** — note the date.
+   - **Status** - confirm it reads **Active**.
+   - **Sponsors** - note the user avatars currently listed as sponsors.
+   - **Owners** - confirm the current value. Note whether an owner is assigned or whether the field shows a dash ( **-** ), indicating no owner is set.
+   - **Blueprint ID** - note the GUID value.
+   - **Object ID** - note the GUID value.
+   - **Agent blueprint** - note the link text (Microsoft Copilot Studio agent identity).
+   - **Created on** - note the date.
 
 3. On the right panel, under **Agent identity's access**, note the current values for:
 
@@ -85,7 +79,7 @@ Estimated time: **10 minutes**
 
       > **Note:** In a newly provisioned environment, both values will show **0**. This confirms that the Zava Finance Agent identity has not been granted any API permissions or Entra directory roles, which is the expected least-privilege starting state.
 
----
+
 
 ### Task 3: Assign Patti Fernandes as Owner of the Zava Finance Agent Identity
 
@@ -107,7 +101,7 @@ Estimated time: **10 minutes**
 
    > **Note:** Assigning an owner to an agent identity establishes accountability for that identity within the Entra governance model. Owners receive access review notifications and are responsible for attesting to the identity's continued need and appropriate access.
 
----
+
 
 ## Exercise 2: Disable and Re-enable the Zava HR Assistant
 
@@ -131,7 +125,7 @@ Estimated time: **10 minutes**
 
 	![](./media/l02-e2-t1-s4.png)
 
----
+
 
 ### Task 2: Verify that End-User Access is Blocked
 
@@ -158,10 +152,10 @@ Estimated time: **10 minutes**
 
 2. In the left navigation, select **All agents** and then search for `Zava`.
 
-3. Note the results — the agent **Zava HR Assistant** should not be visible.
+3. Note the results - the agent **Zava HR Assistant** should not be visible.
 
    > **Note:** Identity disable propagation may take up  time . If the agent responds normally immediately after disabling, wait for some time and attempt again. you can proceed to Task 3 as it may take time.
----
+
 
 ### Task 3: Re-enable the Zava HR Assistant Identity
 
@@ -191,7 +185,7 @@ Estimated time: **10 minutes**
 
 7. Repeat the end-user access check to confirm the agent is accessible again.
 
----
+
 
 ## Summary
 

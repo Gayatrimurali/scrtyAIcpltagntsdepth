@@ -1,12 +1,12 @@
 # Lab 01: Agent Discovery and Registry Management
 
+### Estimated time: 20 Minutes
+
 ## Introduction
 
 Zava's CISO has asked the security team to confirm that all deployed AI agents are visible, governed, and accounted for before any security policy work begins. Patti Fernandes, Zava's Security Admin and SOC Analyst, will use the Agent Registry in Microsoft Entra ID to inspect the three Zava agents, test lifecycle controls, and identify any governance gaps. The Defender XDR workspace and Defender for Cloud Apps connector will also be initialised so that agent activity data begins flowing before moving further in the security journey.
 
-This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary tool for agent discovery, lifecycle management, and governance. Patti will explore the registry, review agent metadata, take lifecycle actions, identify ownerless agents, and complete the prerequisite configuration tasks required for Day 2 security labs — including Purview Audit verification, Defender XDR provisioning, and Defender for Cloud Apps initialisation.
-
----
+This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary tool for agent discovery, lifecycle management, and governance. Patti will explore the registry, review agent metadata, take lifecycle actions, identify ownerless agents, and complete the prerequisite configuration tasks required for Day 2 security labs - including Purview Audit verification, Defender XDR provisioning, and Defender for Cloud Apps initialisation.
 
 ## Objectives
 
@@ -18,14 +18,6 @@ This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary
 - Verify that Purview Audit is active and run a baseline audit log search.
 - Provision Microsoft Defender XDR by signing in to the Defender portal.
 - Configure Defender for Cloud Apps organisation details and connect the Microsoft 365 app connector.
-
----
-
-## Lab Duration
-
-Estimated time: **20 minutes**
-
----
 
 ## Exercise 1: Explore the Agent 365 Overview and Agent Registry
 
@@ -47,17 +39,17 @@ Estimated time: **20 minutes**
 
 3. On the **Agent Overview** page, locate the following metrics and note their current values:
 
-   - **Agent Registry** — total count of agents in the tenant.
-   - **Active users in Copilot** — unique users who interacted with an agent in the last 30 days.
-   - **Pending requests for agents** — open requests to add specific agents.
-   - **Agents without owners** — agents whose owner has left the company.
-   - **Agent analytics** — agents by creators, top platforms used to build agents, and active users in Copilot over time.
+   - **Agent Registry** - total count of agents in the tenant.
+   - **Active users in Copilot** - unique users who interacted with an agent in the last 30 days.
+   - **Pending requests for agents** - open requests to add specific agents.
+   - **Agents without owners** - agents whose owner has left the company.
+   - **Agent analytics** - agents by creators, top platforms used to build agents, and active users in Copilot over time.
 
 		![](./media/secure2.png)
 
       >**Note:** In a freshly configured environment, active user counts and agents without owners may show zero. This is expected. The metrics will populate as agents are used throughout the course.
 
----
+
 
 ### Task 2: Inspect and Approve the Zava Agents in the Agent Registry
 
@@ -104,7 +96,7 @@ Estimated time: **20 minutes**
 	![](./media/l01-e1-t2-s12.png)
 
 1. Repeat the above steps 1 to step 12 for **Zava HR Agent**
----
+
 
 ### Task 3: Approve an Agent in Teams Admin Center
 
@@ -129,11 +121,9 @@ Estimated time: **20 minutes**
 
       >**Note:** If not, click on **Publish** and click on it again on the pop-up confirmation.
 
-	![](./media/secure17.png)
+	  ![](./media/secure17.png)
 
-   	![](./media/secure18.png)
-
----
+      ![](./media/secure18.png)
 
 ### Task 4: Block and Unblock the Zava HR Assistant
 
@@ -147,8 +137,7 @@ Estimated time: **20 minutes**
 
 	![](./media/secure5.png)
 
-3. On the details panel,select **Block**.
-
+3. On the Details panel, click **Block** to prevent users from accessing the **Zava HR Assistant** app while keeping the app installed and available for future use if needed.
 	![](./media/secure6.png)
 
 4. On the **Block agent** pane, review the message confirming that blocking will prevent all users in the organisation from accessing the agent. Check the box next to **Block agent (1)**. Select **Save (2)**.
@@ -159,7 +148,7 @@ Estimated time: **20 minutes**
 
 	![](./media/l01-e1-t4-s5.png)
 
-6. Below the agent name, select **Unblock**.
+6. On the Details panel, click **Unblock** to restore user access to the **Zava HR Assistant** app and make it available again across the organization.
 
 	![](./media/secure8.png)
 
@@ -170,7 +159,7 @@ Estimated time: **20 minutes**
 8. In the agent list, confirm that **Zava HR Assistant** now displays an **Available** status.
 
 9. Close the tab.
----
+
 
 ### Task 5: Export the Agent Inventory
 
@@ -198,7 +187,7 @@ Estimated time: **20 minutes**
 
 6. Close the CSV file.
 
----
+
 
 ### Task 6: Identify Ownerless Agents
 
@@ -218,21 +207,27 @@ Estimated time: **20 minutes**
 
 	![](./media/l01-e1-t6-s4.png)
 
----
-
 ## Exercise 2: Prepare Purview Audit for Day 2
 
 ### Task 1: Verify Purview Audit Is Active
 
-1. Open a new browser tab and navigate to **Microsoft Purview** using the below URL and Sign in with **ODL User** credentials if prompted. Select **Get started**.
+1. Open a new browser tab and enter the following URL to navigate to the **Microsoft Purview**. 
 
     ```
 	https://purview.microsoft.com
 	```
 
+1. Sign in with following  credentials:
+
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
+
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>**
+
+1. When prompted to **Welcome to the new Microsoft Purview portal!**, click  **Get started** to proceed with new Purview portal.
+
 	![](./media/l01-e2-t1-s1.png)
 
-2. In the left navigation pane, select **Audit** from **Solutions**.
+1. In the Microsoft Purview portal, select **Solutions** **(1)** from the left navigation pane, and then choose **Audit** **(2)** to access auditing capabilities.
 
 	![](./media/l01-e2-t1-s2.png)
 
@@ -244,17 +239,15 @@ Estimated time: **20 minutes**
 
    - If no banner is displayed, auditing is already enabled. Proceed to the next step.
 
-4. Configure the search with the following values:
+1. Configure the search with the following values:
 
-   - **Start date:** Select today's date minus 3 days.
-   - **End date:** Select today's date.
-   - **Activities – friendly names:** Leave blank to search all activities.
-   - **Users:** Leave blank.
-   - **Record type:** Leave blank.
+   - **Start date (1):** Select today's date minus 3 days.
 
-5. Select **Search**.
+   - **End date (2):** Select today's date.
 
-	![](./media/l01-e2-t1-s5.png)
+   - Then click **Search** **(3)** to retrieve the corresponding audit logs.
+
+	 ![](./media/l01-e2-t1-s5.png)
 
 6. Wait for the search job to complete.
 
@@ -264,17 +257,21 @@ Estimated time: **20 minutes**
 
    > **Note:** If the search returns no results, this may indicate that no audited activities have occurred yet in the tenant, or that audit log ingestion requires additional time after initial provisioning. This is expected in a new lab environment. Audit records generated throughout this and subsequent labs will be searchable from Day 2 onwards.
 
----
-
 ## Exercise 3: Initialise Microsoft Defender XDR and Defender for Cloud Apps
 
 ### Task 1: Provision Microsoft Defender XDR
 
-1. Open a new browser tab and navigate to **Microsoft Defender** using the below URL and Sign in with **ODL User** credentials if prompted.
+1. Open a new browser tab and enter the following URL to navigate to the **Microsoft Defender** portal. 
 
     ```
 	https://security.microsoft.com
 	```
+
+1. If prompted to Sign in, enter the following credentials:
+
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
+
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>**
 
 2. On the **Microsoft Defender** portal welcome screen, review the provisioning message if displayed.
 
@@ -284,27 +281,23 @@ Estimated time: **20 minutes**
 
 	![](./media/secure11.png)
 
----
-
 ### Task 2: Configure Defender for Cloud Apps Organisation Details
 
-1. In the left navigation pane, expand **System** and select **Settings (1)**. On the **Settings** page, select **Cloud Apps (2)**.
+1. Click **Show navigation** **(1)** to show all menu items, select **Settings** **(2)** under the **System** section, and then choose **Cloud Apps** **(3)** to configure Microsoft Defender for Cloud Apps settings.
 
 	![](./media/secure12.png)
 
-3. Select **Organisation details (1)** and enter the following details and click on **Save (5)**:
+1. Under System, select **Organisation details (1)** and enter the following details and click on **Save (5)**:
 
-	- On the **Organisation details** page, in the **Organisation display name** field, replace the existing name with `Zava Corporation` (2).
+	- On the **Organisation details** page, in the **Organisation display name** field, replace the existing name with `Zava Corporation` **(2)**.
 
-	- In the **Environment name** field, enter **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>** (3).
+	- In the **Environment name** field, enter **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>** **(3)**.
 
 	- In the **Managed domains** field, keep it default
 
-	![](./media/l1e3t2s2.png)
+	  ![](./media/l1e3t2s2.png)
 
 8. Confirm that a success notification appears confirming that the settings were saved.
-
----
 
 ### Task 3: Enable File Monitoring in Defender for Cloud Apps
 
@@ -312,9 +305,7 @@ Estimated time: **20 minutes**
 
 	 ![](./media/secure14.png)
 
-5. Confirm that a success notification appears confirming that file monitoring was enabled.
-
----
+1. Confirm that a success notification appears confirming that file monitoring was enabled.
 
 ### Task 4: Connect the Microsoft 365 App Connector
 
@@ -322,27 +313,25 @@ Estimated time: **20 minutes**
 
 	 ![](./media/secure15.png)
 
-6. On the **Select Microsoft 365 components** page, confirm that all components are selected by default. If any component is deselected, select it to enable it and click **Connect Microsoft 365**.
+1. On the **Select Microsoft 365 components** page, confirm that all components are selected by default. If any component is deselected, select it to enable it and click **Connect Microsoft 365**.
 
-	 ![](./media/secure16.png)
+	![](./media/secure16.png)
 
-8. Wait for the connection to complete. Then slect **Done**.
+1. Wait for the connection to complete. Then click **Done**.
 
 	![](./media/l01-e3-t4-s8.png)
 
-10. On the **App Connectors** page, select the checkbox next to **Microsoft 365** and from the top options select **Connect Microsoft Azure Instance**.
+1. On the **App Connectors** page, select the **Microsoft 365** app connector **(1)** and from the toolbar select **+ icon (2)** to **Connect Microsoft Azure Instance**.
 
 	![](./media/l01-e3-t4-s10.png)
 
-11. Select **Connect Microsoft Azure**. 
+1. Click **Connect Microsoft Azure** to authenticate with your Azure administrator account and establish the connection between Microsoft Defender for Cloud Apps and Microsoft Azure. 
 
 	![](./media/l01-e3-t4-s11.png)
 
-12. Wait for the connection to complete and click on **Done**.
+1. Wait for the connection to complete and click on **Done**.
 
     > **Note:** After connecting, Defender for Cloud Apps begins scanning Microsoft 365 activity. Initial data from the past week will appear in the portal. The first full scan may take several hours depending on tenant size. This connector is required for activity monitoring, DLP policy enforcement, and alert generation in Day 2 and Day 3 labs.
-
----
 
 ## Summary
 
