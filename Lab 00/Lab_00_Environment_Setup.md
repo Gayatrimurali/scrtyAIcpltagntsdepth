@@ -540,14 +540,13 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/pp54.png)
 
-14. Then select **Add channel**.
+14. On Microsoft 365 and Microsoft Teams pane, click **Add channel** to add the channel in teams.
 
-	![](./media/L00-E2-T2-S14.png)
+	![](./media/new48.png)
 
 15. In the **Ready to publish?** dialog, select **Publish**. Close the tab.
 
 	![](./media/image89.png)
-
 
 ### Task 3: Create the Zava IT Support Agent
 
@@ -555,21 +554,33 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/pp22.png)
 
-3. In the **Name** field, enter `Zava IT Support Agent` and click on **Create**.
+1. Enter **Zava IT Support Agent (1)** as the agent name, and then click **Create (2)** to create the agent.
 
-	![](./media/pp55.png)
+	![](./media/new49.png)
 
-4. In the **Description** field, enter `An AI assistant that helps Zava employees resolve common IT issues, submit support requests, and find IT policy documentation.` Then select **Save**.
+1. Click on **Edit** to enter the Description.
 
-5. In the **Instructions** field, select **Edit**.
+	 ![](./media/new50.png)
+	 
+1. In the **Description** field, enter the following **description (1)** and select **Save (2)**.
 
-6. Enter the following and select **Save**.
+    ```
+	An AI assistant that helps Zava employees resolve common IT issues, submit support requests, and find IT policy documentation.
+	```
+
+	 ![](./media/new51.png)
+
+1. Scroll downn to the **Instructions** field, click on **Edit** to enter the instructions.
+
+	 ![](./media/new32.png)
+
+1. Then enter the following instructions **(1)** and click on **Save (2)** to save the changes.
 
     ```
     You are the Zava IT Support Agent. Help users with common IT questions using publicly available Microsoft support documentation and Zava IT policies. Do not access or share any sensitive financial or HR information. Escalate complex issues to the IT helpdesk.
     ```
 
-	 ![](./media/pp56.png)
+	 ![](./media/new52.png)
 
 7. On the agent configuration page, locate the **Knowledge** section. Select **+ Add knowledge**.
 
@@ -599,9 +610,9 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/pp58.png)
 
-15. Select **Microsoft 365 Copilot and Microsoft Teams** to add them as channels.
+15. Select **Microsoft 365 and Microsoft Teams** to add them as channels.
 
-	![](./media/L00-E2-T3-S14.png)
+	![](./media/new1.5.png)
 
 16. Then select **Add channel**.
 
@@ -611,7 +622,7 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/L00-E2-T3-S16.png)
 
-18. On the **Microsoft 365 Copilot and Microsoft Teams** page, select **Show to everyone in my org**.
+18. On the **Microsoft 365 and Microsoft Teams** page, select **Show to everyone in my org**.
 
 	![](./media/L00-E2-T3-S17.png)
 
@@ -624,8 +635,6 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 	![](./media/image114.png)
 
 21. You will be redirected to **Show in Teams app store for org** and see a notification: **Your agent is submitted and waiting for approval from your Teams admin**. Close the tab.
-
-
 
 ## Exercise 3: Upload Zava Knowledge Files to SharePoint
 
