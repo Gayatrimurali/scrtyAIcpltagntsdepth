@@ -1,4 +1,6 @@
-# Lab 00: Environment Setup — Zava Corporation AI Agent Infrastructure
+# Lab 00: Environment Setup - Zava Corporation AI Agent Infrastructure
+
+## Estimated time: 30 Minutes
 
 ## Introduction
 
@@ -8,11 +10,7 @@ Before any security configuration can begin, the Zava Corporation environment mu
 
 Every subsequent lab depends on the agents, identities, and files created here. Complete all three exercises in order before proceeding to Lab 01.
 
----
-
-   > **Note:** In a real-world environment, responsibilities like these would be distributed across multiple personas — developers, IT administrators, security administrators, and compliance officers — each operating with scoped permissions aligned to the principles of least privilege and Zero Trust.
-
----
+> **Note:** In a real-world environment, responsibilities like these would be distributed across multiple personas - developers, IT administrators, security administrators, and compliance officers - each operating with scoped permissions aligned to the principles of least privilege and Zero Trust.
 
 ## Objectives
 
@@ -26,52 +24,57 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 - Upload Zava sample business documents to the HR and Finance SharePoint sites.
 - Verify that all three agents appear as Active in the Microsoft Agent 365 Agent Registry.
 
----
-
-## Lab Duration
-
-Estimated time: **30 minutes**
-
----
 ## Exercise 0: Create the Zava HR SharePoint Site
 
-1. Open a new browser tab and navigate to `https://admin.microsoft.com`. Sign in with **ODL_User** credentials if prompted.
+1. Open a new browser tab and enter the following URL to navigate to the **Microsoft Entra admin center** portal. 
 
-	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-	- **Password:** <inject key="AzureAdUserPassword"></inject>
+    ```
+	https://admin.microsoft.com
+	```
 
-2. In the left navigation pane, click on **Show All**, select **SharePoint** under **Admin centers**.
+1. Sign in with following  credentials:
+
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
+
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>**
+
+1. Click **Show all** in the left navigation pane to expand and display all available administration options in the Microsoft 365 admin center.
+
+1. In the left navigation pane, select **SharePoint** under **Admin centers**.
 
 	![](./media/L00-E0-S2.png)
 
-1. In the SharePoint admin center, from the left navigation pane, expand ****Sites** and select **Active sites**. Then, click **+ Create**.
+1. In the SharePoint admin center, from the left navigation pane, expand **Sites (1)** and select **Active sites (2)**. Then, click **+ Create (3)**.
 
 	![](./media/L00-E0-S4.png)
 
-5. On the **Create a site** panel, select **Team site**.
+1. On the **Create a site** panel, select **Team site**.
 
 	![](./media/L00-E0-S5.png)
 
-6. On the **Select a template** page, select **Standard team**.
+1. On the **Select a template** page, select **Standard team**.
 
 	![](./media/l0n1.png)
 
-7. On the **Preview and use 'Standard team' template** page, select **Use template**.
+1. On the **Preview and use 'Standard team' template** page, select **Use template**.
 
 	![](./media/l0n2.png)
 
-6. On the **Team site** configuration page, enter the following and click on **Next**:
+1. On the **Team site** configuration page, enter the following details and click on **Next (4)**:
 
-   - **Site name:** **HR<inject key="Deployment ID" enableCopy="false"></inject>**
-   - **Site address:** Confirm the URL path reads **/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>**
-   - **Group Owner:** ODL_User <inject key="Deployment ID" enableCopy="false"></inject>
+    - **Site name:** **HR<inject key="Deployment ID" enableCopy="false"></inject> (1)**
 
-		![](./media/L00-E0-S7.png)
+    - **Site address:** Confirm the URL path reads **/sites/HR<inject key="Deployment ID" enableCopy="false"></inject> (2)**
 
-1. Add the following details and click on **Create site**:
+    - **Group Owner:** **ODL_User <inject key="Deployment ID" enableCopy="false"></inject> (3)**
 
-   - **Privacy settings:** Select **Private - only members can access this site**.
-   - **Select a language:** English.
+	   ![](./media/L00-E0-S7.png)
+
+1. Add the following details and click on **Create site (3)**:
+
+    - **Privacy settings:** Select **Private - only members can access this site (1)**.
+
+    - **Select a language:** **English (2)**
 
 		![](./media/L00-E0-S8.png)
 
@@ -79,19 +82,39 @@ Estimated time: **30 minutes**
 
 	![](./media/l0n3.png)
 
-8. Wait for the site to finish provisioning. Confirm it appears in the **Active sites** list with the URL **https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>**.
+1. Once the site is provisioned, select **Active sites (1)**, and verify that the HR site appears in the list. Click on the URL ending in **/sites/HR<inject key="Deployment ID" enableCopy="false"></inject> (2)**.
 
-   > **Note:** This site is the SharePoint knowledge source for the Zava HR Assistant agent created in Lab 00 Exercise 2. The agent connection in Copilot Studio references **/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>** specifically. Do not use a different URL slug.
+	![](./media/new1.1.png)
 
-9. Follow the same steps from step-3 to step 9 and create the following site:
+1. Verify that the **HR SharePoint site** is open, then **copy the site URL** from the browser address bar and **paste it in the Notepad.** 
 
-   - **Site name:** **Operations<inject key="Deployment ID" enableCopy="false"></inject>**
-   - **Site address:** Confirm the URL path reads **/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>**
-   - **Group Owner:** ODL_User <inject key="Deployment ID" enableCopy="false"></inject>
-   - **Privacy settings:** Select **Private**.
-   - **Select a language:** English.
+1. Ensure the URL contains **https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>**, as it will be used in later steps.
 
----
+	![](./media/new1.3.png)
+
+     > **Note:** This site serves as the SharePoint knowledge source for the **Zava HR Assistant** agent that will be created in **Lab 00, Exercise 2**. The Copilot Studio connection specifically references **/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>**, so ensure that the site URL matches exactly.
+
+1. Repeat **Steps 5 - 11** to create another site using the following details:
+
+    - **Site name:** **Operations<inject key="Deployment ID" enableCopy="false"></inject>**
+
+    - **Site address:** Confirm the URL path reads **/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>**
+
+    - **Group Owner:** **ODL_User <inject key="Deployment ID" enableCopy="false"></inject>**
+
+    - **Privacy settings:** Select **Private**.
+
+    - **Select a language:** English.
+
+1. Once the site is provisioned, select **Active sites (1)**, and verify that the Operations site appears in the list. Click on the URL ending in **/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject> (2)**.
+
+	![](./media/new1.2.png)
+
+1. Verify that the **Operations SharePoint site** is open, then **copy the site URL** from the browser address bar and **paste it in the Notepad.** 
+
+1. Ensure the URL contains **https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>**, as it will be used in later steps.
+
+	![](./media/new1.4.png)	
 
 ## Exercise 1: Configure Entra ID and Enable Copilot Studio Authors
 
@@ -102,7 +125,7 @@ Estimated time: **30 minutes**
 2. On the sign-in page, enter the **ODL User** credentials from the **Environment** tab of your lab environment if prompted:
 	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-	  ![](./media/L00-E1-T1-S2.png)
+	  ![](./media/new-8.png)
 
 	- **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
 
@@ -114,63 +137,53 @@ Estimated time: **30 minutes**
 
 1. On the Microsoft Entra admin center welcome screen, select **Get Started**.
 
----
-
 ### Task 2: Create the copilotagentsecurity Security Group
 
 1. In the Microsoft Entra admin center, in the left navigation pane, expand **Entra ID** and select **Groups**.
 
 	![](./media/L00-E1-T2-S1.png)
 
-2. On the **Overview** page, select **New group**.
+1. On the **Overview** page, select **New group**.
 
-	![](./media/L00-E1-T2-S2.png)
+	![](./media/new4.png)
 
-3. On the **New Group** page, configure the following fields:
+1. On the **New Group** page, enter the following details:
 
-   - **Group type:** Select **Security**.
-   - **Group name:** Enter `copilotagentsecurity`.
-   - **Microsoft Entra roles can be assigned to the group:** Select **Yes**. If this option is not visible, skip this field and continue.
+    - **Group type:** Select **Security (1)**
 
-		![](./media/L00-E1-T2-S3.png)
+    - **Group name:** Enter **`copilotagentsecurity`(2)**
 
-4. Under **Owners**, select **No owners selected**.
+    - **Microsoft Entra roles can be assigned to the group:** Select **Yes (3)**. 
+   
+       >**Note:** If this option is not visible, skip this field and continue.
 
-	![](./media/L00-E1-T2-S4.png)
+    - **Owners:** click **No owners selected (4)**.	  
 
-5. On the **Add owners** panel, search for and select **ODL_USER <inject key="Deployment ID" enableCopy="false"></inject>**. Choose **Select** to confirm the owner.
+		![](./media/new5.png)
 
-	![](./media/L00-E1-T2-S5.png)
+1. On the **Add owners** panel, search for **ODL_User <inject key="Deployment ID" enableCopy="false"></inject> (1)** and **select (2)** it . Choose **Select (3)** to confirm the owner.
 
-6. Under **Members**, select **No members selected**.
+	![](./media/new6.png)
 
-	![](./media/L00-E1-T2-S6.png)
+1. Under **Members**, select **No members selected**.
 
-7. On the **Add members** panel, search for and select **ODL User <inject key="Deployment ID" enableCopy="false"></inject>** and **Patti Fernandes**. Choose **Select** to confirm the members.
+	![](./media/new7.png)
 
-	![](./media/L00-E1-T2-S7.png)
+1. On the **Add members** panel, search and select **ODL User <inject key="Deployment ID" enableCopy="false"></inject> (1)** and **Patti Fernandes (2)**. Once selected click **Select (3)** to confirm the members.
 
-8. Under **Roles**, select **No roles selected**.
+	![](./media/new8.png)
 
-	![](./media/L00-E1-T2-S8.png)
+1. Click **No roles selected** **(1)**, search for **Global admin** **(2)**, select the **Global Administrator** role **(3)**, click **Select** **(4)** to assign the role, and then click **Create** **(5)** to create the security group.
 
-9. On the **Select roles** panel, search for `Global admin`, select **Global Administrator**, and click **select**.
+	![](./media/new9.png)
 
-	![](./media/L00-E1-T2-S9.png)
+1. In the confirmation dialog, select **Yes**.
 
-10. Click **Create** to create the new group.
+	![](./media/new10.png)
 
-	![](./media/L00-E1-T2-S10.png)
-
-11. In the confirmation dialog, select **Yes**.
-
-	![](./media/L00-E1-T2-S11.png)
-
-12. Confirm that a success notification appears at the top of the page.
+1. Confirm that a success notification appears at the top of the page.
 
 	![](./media/L00-E1-T2-S13.png)
-
----
 
 ### Task 3: Enable Access Management for Azure Resources
 
@@ -178,55 +191,56 @@ Estimated time: **30 minutes**
 
 	![](./media/L00-E1-T3-S1.png)
 
-2. On the **Overview** page, select **Properties** from the top bar.
+1. Select the **Properties** tab **(1)**, ensure **Access management for Azure resources** is enabled and set to **Yes** **(2)**, click **Save** **(3)** to apply the changes.
 
-	![](./media/L00-E1-T3-S2.png)
+1. Once saved, click **Manage security defaults** **(4)** to configure the tenant's security settings.
 
-3. On the **Properties** page, locate the **Access management for Azure resources** toggle and set it to **Yes**.
+	![](./media/new11.png)
 
-	![](./media/L00-E1-T3-S3.png)
+1. On the **Security defaults** panel, under **Security defaults**, select **Enabled (1)** if not already enabled and then click **Save (2)**.
 
-5. Select **Manage security defaults**.
+	![](./media/new12.png)
 
-	![](./media/L00-E1-T3-S4.png)
-
-6. On the **Security defaults** panel, under **Security defaults**, select **Enabled** if not already enabled and then click **Save**.
-
-	![](./media/L00-E1-T3-S5.png)
-
-7. Return to the **Properties** page and select **Save**.
+1. Return to the **Properties** page and click **Save** if you have not already saved the changes.
 
 	![](./media/L00-E1-T3-S6.png)
 
----
-
 ### Task 4: Assign the Privileged Role Administrator Role
 
-1. In the left navigation pane of the Microsoft Entra admin center, expand **Entra ID** and select **Roles & admins**.
+1. In the left navigation pane of the Microsoft Entra admin center, expand **Entra ID** and select **Roles & admins (1)**, search for **Privileged Role Administrator (2)**, and then select the **Privileged Role Administrator (3)** role from the results.
 
-	![](./media/L00-E1-T4-S1.png)
+	![](./media/new13.png)
 
-2. On the **Roles and administrators** page, in the search bar, search `Privileged Role Administrato` and select **Privileged Role Administrator** by selecting its name .
+1. On the **Privileged Role Administrator** page, select **+ Add assignments**.
 
-	![](./media/L00-E1-T4-S2.png)
+	![](./media/new14.png)
 
-5. On the **Privileged Role Administrator** page, select **+ Add assignments**.
+1. Select **No member selected** under **Select member(s)** to choose the user or group that will be assigned the **Privileged Role Administrator** role.
 
-	![](./media/pp1.png)
+	![](./media/new15.png)
 
-7. On the **Select members** panel, search for and select **copilotagentsecurity**. Choose **Add** to confirm.
+1. Search for **copilotagentsecurity (1)**, select the **copilotagentsecurity (2)** group from the results, and then click **Select (3)**.
 
-	![](./media/L00-E1-T4-S6.png)
+	![](./media/new16.png)
 
-11. Confirm that the role assignment appears in the assignments list.
+1. Review the selected **copilotagentsecurity** group under **Selected member(s)**, and then click **Next** to continue configuring the role assignment settings.
 
-	![](./media/pp2.png)
+	![](./media/new17.png)
 
----
 
 ### Task 5: Configure Copilot Studio Authors in Power Platform Admin Center
 
-1. Open a new browser tab and navigate to `https://admin.powerplatform.microsoft.com`.
+1. Open a new browser tab and enter the following URL to navigate to the **Power Platform admin center**. 
+
+     ```
+	 https://admin.powerplatform.microsoft.com
+	 ```
+
+1. Sign in with following  credentials:
+
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
+
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>** 
 
 2. In the left navigation pane, select **Manage (1) > Environments (2)**. Click on **+New (3)**.
 
@@ -236,59 +250,67 @@ Estimated time: **30 minutes**
 
 	![](./media/pp4.png)
 
-1. Scroll down ,expand the Change default settings dropdown and enable the **Add a dataverse store? (1)** and click on **Next (2)**.
+1. Expand **Change default settings (1)**, ensure **Add a Dataverse data store?** is set to **Yes (2)**, and then click **Next (3)**.
 
-	![](./media/pp5.png)
+	![](./media/ss.png)
 
 1. On the **Add Dataverse** page, click on **+Select** under Security Group.
 
 	![](./media/pp6.png)
 
-1. Select the **copilotagentsecurity (1)** group from the results. Then, select **Done (2)**.
+1. On **Edit Security group** pane search bar, search for **copilotagentsecurity (1)** and select the **copilotagentsecurity (2)** group from the results. Then, select **Done (2)**.
 
-	![](./media/pp7.png)
+	![](./media/new23.png)
 
 1. Select **Save** to apply the setting.
 
 	![](./media/pp8.png)
 
-3. Under **Manage**, select **Tenant Settings**. On the **Tenant Settings** page, locate and select **Copilot Studio Authors** from the list.
+1. Once the newly created environment is ready, click on it to open and then copy the **Environment ID** and paste it in the Notepad for later use.
 
-	![](./media/L00-E1-T5-S2.png)
+	![](./media/pp20.png)	
 
-4. On the **Copilot Studio Authors** panel, select the **Edit** icon near security group.
+1. In the **Power Platform admin center**, select **Manage (1)** > **Tenant settings (2)**, search for **Copilot Studio authors (3)**, and then select **Copilot Studio authors (4)** from the results.
 
-	![](./media/L00-E1-T5-S4.png)
+	![](./media/new21.png)
 
-5. In the search field, enter `copilotagentsecurity`. Select the **copilotagentsecurity** group from the results. Then, click **Done**.
+1. In the navigation pane, select **Licensing**.
 
-	![](./media/L00-E1-T5-S5.png)
+1. In the Licensing pane, select Pay-as-you-go plans. The Billing plans page is displayed.
 
-6. Select **Save** to apply the setting.
+1. Select **New billing plan**. The **New billing plan** pane is displayed.
+
+1. Select **Microsoft 365 Copilot Chat**.
+
+1. In the Name field, provide a name as **zavaplan-<inject key="Deployment ID" enableCopy="false"></inject>** for your new billing plan.
+
+1. From the **Azure subscription** dropdown list, select your **Azure subscription**.
+
+1. From the Resource group dropdown list, select **labvm** resource group. Then select **Save**.
+
+1. On the **Copilot Studio Authors** panel, select the **Edit** icon near security group.
+
+	![](./media/new22.png)
+
+1. On **Edit Security group** pane search bar, search for **copilotagentsecurity (1)** and select the **copilotagentsecurity (2)** group from the results. Then, select **Done (2)**.
+
+	![](./media/new23.png)
+
+1. Select **Save** to apply the setting.
 
 	![](./media/L00-E1-T5-S6.png)
 
----
-
 ### Task 6: Enable Entra Agent Identity for Copilot Studio
 
-1. In the left navigation pane, select **Copilot**.
+1. In the left navigation pane of **Power Platform admin center**, select **Copilot (1)** > **Settings (2)**, and then select **Entra agent identity for Copilot Studio (3)** to configure agent identity settings.
 
-	![](./media/L00-E1-T6-S1.png)
-
-2. On the **Copilot** page, select **Settings**.
-
-	![](./media/L00-E1-T6-S2.png)
-
-3. In the settings list, under the **Copilot Studio** section, select **Entra Agent Identity for Copilot Studio**.
-
-	![](./media/L00-E1-T6-S3.png)
+	 ![](./media/new24.png)
 
 4. On the **Entra Agent Identity for Copilot Studio** panel, select the **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>** environment from the environment list and Select **Edit setting**.
 
-	![](./media/L00-E1-T6-S4.png)
+	![](./media/new25.png)
 
-5. On the setting panel of Entra Agent Identity for Copilot Studio, select **On** if not done and click **Save**
+5. On the setting panel of Entra Agent Identity for Copilot Studio, select **On (1)** if not done and click **Save (2)**
 
 	![](./media/L00-E1-T6-S6.png)
 
@@ -298,157 +320,175 @@ Estimated time: **30 minutes**
 
       >**Note:** Enabling Entra Agent Identity allows Copilot Studio agents to be automatically assigned a unique identity in Microsoft Entra ID. This is required for identity governance, Conditional Access, and Defender for Cloud Apps integration in later labs.
 
----
-
 ### Task 7: Add a SharePoint Connection in the Power Apps Maker Portal
 
-1. Open a new browser tab and navigate to `https://make.powerapps.com` and sign in with **ODL_User** credentials if prompted.
+1. Open a new browser tab and enter the following URL to navigate to the **Power Platform** portal. 
 
-	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-	- **Password:** <inject key="AzureAdUserPassword"></inject>
+     ```
+	 https://make.powerapps.com
+	 ```
 
-2. If prompted, on the **Welcome to Power Apps** screen, click **Get started**.
+1. Sign in with following  credentials:
+
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
+
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>** 
+
+1. If prompted, on the **Welcome to Power Apps** screen, click **Get started**.
 
 	![](./media/image45.png)
 
-3. In the top-right corner, confirm that the **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>** environment is selected in the environment switcher. If not, select the environment switcher and select **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>**.
+1. In the top-right corner, confirm that the **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>** environment is selected in the environment switcher. If not, select the environment switcher and select **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>**.
 
-	![](./media/pp11.png)
+	![](./media/new26.png)
 
-4. In the left navigation bar, expand **More (1)** and select **Connections (2)**.
+1. In the left navigation bar, expand **... More (1)** and select **Connections (2)**.
 
 	![](./media/pp12.png)
 
-5. On the **Connections** page, select **+ New connection**.
+1. On the **Connections** page, select **+ New connection**.
 
 	![](./media/pp13.png)
 
-6. In the connector search bar, enter `SharePoint` and  select **SharePoint** from the list of available connectors.
+1. In the connector search bar, enter `SharePoint` and  select **SharePoint** from the list of available connectors.
 
 	![](./media/pp14.png)
 
-7. On the **SharePoint** connection panel, select **Connect directly (cloud services)**. Select **Create**.
+1. On the **SharePoint** connection panel, select **Connect directly (cloud services) (1)**, then click **Create**.
 
-8. When prompted, sign in with **ODL_User** credentials to authorise the connection.
+	![](./media/new27.png)
+
+1. When prompted, sign in with **ODL_User** credentials to authorise the connection.
    
 	![](./media/L00-E1-T7-S7.png)
 
-9. On the Confirmation required pop-up, check the box for **I have verified this request and trust this source (1)** and select **Allow access (2)**.
+1. On the Confirmation required pop-up, check the box for **I have verified this request and trust this source (1)** and select **Allow access (2)**.
 
 	![](./media/pp3.png)
 
-11. Confirm that the SharePoint connection appears in the **Connections** list with a status of **Connected**.
+1. Confirm that the SharePoint connection appears in the **Connections** list with a status of **Connected**.
 
 	![](./media/pp15.png)
----
 
 ## Exercise 2: Create the Zava Copilot Studio Agents
 
 In this exercise, you will creates all three Zava agents in Microsoft Copilot Studio. Each agent is configured with a name, description, instructions, and a SharePoint knowledge source. After publishing, each agent is shared with the designated lab user accounts. These agents serve as the live governance targets in Labs 01 through 07.
 
----
-
 ### Task 1: Create the Zava HR Assistant
 
-1. Open a new browser tab and navigate to `https://copilotstudio.microsoft.com`. Sign in with **ODL_User** credentials if prompted.
+1. Open a new tab and enter the following URL to navigate to the **Copilot Studio**. 
 
-	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-	- **Password:** <inject key="AzureAdUserPassword"></inject>
+     ```
+	 https://copilotstudio.microsoft.com
+	 ```
 
-1. If Copilot Studio does not load, follow these steps:
+1. Sign in with following  credentials:
 
-	- Open `https://admin.powerplatform.microsoft.com/`. Select **Manage** > **Environments** > **dev-one-<inject key="Deployment ID" enableCopy="false"></inject>** and copy the value of the **Environment ID**.
+	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
 
-		![](./media/pp20.png)
-   
-   - Navigate back to the Copilot Studio tab and open `https://copilotstudio.microsoft.com/environments/<EnvironmentID>` (replacing `<EnvironmentID>` with the value copied above).
+	- **Password:** **<inject key="AzureAdUserPassword"></inject>** 
 
-2. On the **Welcome** screen, click on **Get Started**.
+1. If Copilot Studio does not load, replace the `Default-environmentid` **(1)** with the **Environment ID** you just copied and pasted in the Notepad in **Exercise 1 Task 5 Step 9 (2)** and press **Enter**.
+
+	![](./media/image.png)
+
+	![](./media/img1.png)	
+
+1. On the **Welcome** screen, click on **Get Started**.
 
 	 ![](./media/pp21.png)
 
-4. In the left navigation pane, select **Agents**. On the **Create an agent** page, select **Create blank agent**.
+1. In the left navigation pane, select **Agents**. On the **Create an agent** page, select **Create blank agent**.
 
 	 ![](./media/pp22.png)
 
-7. In the **Name** field, enter `Zava HR Assistant` and click on **Create**.
+1. Enter **Zava HR Assistant (1)** as the agent name, and then click **Create (2)** to create the agent.
 
-	 ![](./media/pp23.png)
+	 ![](./media/new31.png)
 
-1. Click on **Edit**.
+1. Click on **Edit** to enter the Description.
 
 	 ![](./media/pp24.png)
 
-8. In the **Description** field, enter `An AI assistant that helps Zava employees find HR policies, benefits information, and employee procedures.` and select **Save**.
+1. In the **Description** field, enter the following description and select **Save**.
+
+    ```
+	An AI assistant that helps Zava employees find HR policies, benefits information, and employee procedures.
+	```
 
 	 ![](./media/pp25.png)
 
-10. Scroll downn to the **Instructions** field, click on **Edit** and enter the following, then select **Save**.
+1. Scroll downn to the **Instructions** field, click on **Edit** to enter the instructions.
+
+	 ![](./media/new32.png)
+
+1. Then enter the following instructions **(1)** and click on **Save (2)** to save the changes.
 
     ```
     You are the Zava HR Assistant. Answer questions using only the information available in the Zava HR SharePoint knowledge base. Do not speculate or provide information outside the knowledge base. Always respond professionally.
     ```
 
-12. On the agent configuration page, locate the **Knowledge** section. Select **+ Add knowledge**.
+	 ![](./media/new33.png)	 
+
+1. On the agent configuration page, locate the **Knowledge** section. Select **+ Add knowledge**.
 
     ![](./media/kn.png)   
 
-13. On the **Add knowledge** panel, select **SharePoint**.
+1. On the **Add knowledge** panel, select **SharePoint**.
 
 	![](./media/L00-E2-T1-S12.png)
 
-14. In the **SharePoint URL** field, enter the SharePoint HR site URL in the following format and select **Add**:
-    **https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>**
+1. In the **SharePoint URL** field, enter the SharePoint HR site URL that you copied in in the **Exercise 0 step 13-14** with the following format and select **Add**:
 
-    > **Note:** Replace `[TenantPrefix]` with your tenant prefix found on the **Environment** tab of your lab environment or take url from exercise 0 .
+    ```
+	https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>
+	```
 
-       ![](./media/pp27.png)
+     ![](./media/pp27.png)
 
-16. Select **Add to agent** to connect the SharePoint site as the knowledge source.
+1. Select **Add to agent** to connect the SharePoint site as the knowledge source.
 
     ![](./media/l0e2t1s12.png)  
 
-17. In the top-right corner of the agent configuration page, select **Publish**.
+1. In the top-right corner of the agent configuration page, select **Publish**.
 
     ![](./media/l0e2t1s13.png)
 
-18. In the confirmation dialog, select **Publish** to confirm.
+1. In the confirmation dialog, select **Publish** to confirm.
 
-	![](./media/image65.png)
+	![](./media/image89.png)
 
-19. On the agent configuration page, locate the **Channels** tab on the top section (select **+** if it is not directly visible).
+1. On the agent configuration page, locate the **Channels** tab on the top section (select **+** if it is not directly visible).
 
-	   ![](./media/pp30.png)
+	![](./media/pp30.png)
 
-20. Select **Microsoft 365 Copilot and Microsoft Teams** to add them as channels.
+1. Select **Microsoft 365 and Microsoft Teams** to add them as channels.
 
-	   ![](./media/pp31.png)
+	![](./media/new1.6.png)
 
-21. Then select **Add channel**.
+1. Then select **Add channel**.
 
-	![](./media/L00-E2-T1-S19.png)
+	![](./media/new38.png)
 
-22. Select **Availability options**.
+1. Select **Availability options**.
 
-	![](./media/L00-E2-T1-S20.png)
+	![](./media/new39.png)
 
-23. On the **Microsoft 365 Copilot and Microsoft Teams** page, select **Show to everyone in my org**.
+1. On the **Microsoft 365 and Microsoft Teams** page, select **Show to everyone in my org**.
 
-	![](./media/L00-E2-T1-S21.png)
+	![](./media/new40.png)
 
-24. Select **Submit to org catalog**.
+1. Select **Submit to org catalog**.
 
 	![](./media/L00-E2-T1-S22.png)
 
-25. On the **Give everyone access to this agent?** confirmation dialog, select **Yes**.
+1. On the **Give everyone access to this agent?** confirmation dialog, select **Yes**.
 
 	![](./media/L00-E2-T1-S23.png)
 
-26. You will be redirected to **Show in Teams app store for org** and see a notification: **Your agent is submitted and waiting for approval from your Teams admin**. Click on **Close**.
+1. You will be redirected to **Show in Teams app store for org** and see a notification: **Your agent is submitted and waiting for approval from your Teams admin**. Click on **Close**.
 
 	![](./media/L00-E2-T1-S24.png)
-
----
 
 ### Task 2: Create the Zava Finance Agent
 
@@ -456,34 +496,47 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/pp22.png)
 
-3. In the **Name** field, enter `Zava Finance Agent` and click on **Create**.
+1. Enter **Zava Finance Agent (1)** as the agent name, and then click **Create (2)** to create the agent.
 
-	![](./media/pp50.png)
+	![](./media/new41.png)
 
-4. In the **Description** field, enter `An AI assistant that helps Zava finance team members retrieve budget information, invoice data, and financial reports.` Then select **Save**.
+1. Click on **Edit** to enter the Description.
 
-5. In the **Instructions** field, select **Edit**.
+	 ![](./media/new42.png)
+	 
+1. In the **Description** field, enter the following **description (1)** and select **Save (2)**.
 
-6. Enter the following and select **Save**.
+   ```
+   An AI assistant that helps Zava finance team members retrieve budget information, invoice data, and financial reports.
+   ```
+
+	 ![](./media/new43.png)
+
+1. Scroll downn to the **Instructions** field, click on **Edit** to enter the instructions.
+
+	 ![](./media/new32.png)
+
+1. Then enter the following instructions **(1)** and click on **Save (2)** to save the changes.
 
     ```
     You are the Zava Finance Agent. Answer questions using only the information in the Zava Finance SharePoint knowledge base. Do not share financial data with users who have not been granted access to the Finance SharePoint site. Always respond professionally and flag any requests for data outside your knowledge base.
     ```
 
-	![](./media/pp51.png)
+	![](./media/new44.png)
 
-7. Scroll down and on the agent configuration page, locate the **Knowledge** section. Select **+ Add knowledge**.
+1. Scroll down and on the agent configuration page, locate the **Knowledge** section. Select **+ Add knowledge**.
 
     ![](./media/kn.png) 
 
-8. On the **Add knowledge** panel, select **SharePoint**.
+1. On the **Add knowledge** panel, select **SharePoint**.
 
 	![](./media/image82.png)
 
-9. In the **SharePoint URL** field, enter the SharePoint Finance site URL in the following format:
-    **https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>**
+1. In the **SharePoint URL** field, enter the SharePoint Operations site URL that you copied in in the **Exercise 0 step 17-18** with the following format and select **Add**:
 
-    > **Note:** Replace `[TenantPrefix]` with your tenant prefix from the **Environment** tab.
+    ```
+	https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>
+	```
 
 10. Select **Add** to connect the SharePoint site as the knowledge source.
 
@@ -501,14 +554,13 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/pp54.png)
 
-14. Then select **Add channel**.
+14. On Microsoft 365 and Microsoft Teams pane, click **Add channel** to add the channel in teams.
 
-	![](./media/L00-E2-T2-S14.png)
+	![](./media/new48.png)
 
 15. In the **Ready to publish?** dialog, select **Publish**. Close the tab.
 
 	![](./media/image89.png)
----
 
 ### Task 3: Create the Zava IT Support Agent
 
@@ -516,21 +568,33 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/pp22.png)
 
-3. In the **Name** field, enter `Zava IT Support Agent` and click on **Create**.
+1. Enter **Zava IT Support Agent (1)** as the agent name, and then click **Create (2)** to create the agent.
 
-	![](./media/pp55.png)
+	![](./media/new49.png)
 
-4. In the **Description** field, enter `An AI assistant that helps Zava employees resolve common IT issues, submit support requests, and find IT policy documentation.` Then select **Save**.
+1. Click on **Edit** to enter the Description.
 
-5. In the **Instructions** field, select **Edit**.
+	 ![](./media/new50.png)
+	 
+1. In the **Description** field, enter the following **description (1)** and select **Save (2)**.
 
-6. Enter the following and select **Save**.
+    ```
+	An AI assistant that helps Zava employees resolve common IT issues, submit support requests, and find IT policy documentation.
+	```
+
+	 ![](./media/new51.png)
+
+1. Scroll downn to the **Instructions** field, click on **Edit** to enter the instructions.
+
+	 ![](./media/new32.png)
+
+1. Then enter the following instructions **(1)** and click on **Save (2)** to save the changes.
 
     ```
     You are the Zava IT Support Agent. Help users with common IT questions using publicly available Microsoft support documentation and Zava IT policies. Do not access or share any sensitive financial or HR information. Escalate complex issues to the IT helpdesk.
     ```
 
-	 ![](./media/pp56.png)
+	 ![](./media/new52.png)
 
 7. On the agent configuration page, locate the **Knowledge** section. Select **+ Add knowledge**.
 
@@ -560,9 +624,9 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/pp58.png)
 
-15. Select **Microsoft 365 Copilot and Microsoft Teams** to add them as channels.
+15. Select **Microsoft 365 and Microsoft Teams** to add them as channels.
 
-	![](./media/L00-E2-T3-S14.png)
+	![](./media/new1.5.png)
 
 16. Then select **Add channel**.
 
@@ -572,7 +636,7 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/L00-E2-T3-S16.png)
 
-18. On the **Microsoft 365 Copilot and Microsoft Teams** page, select **Show to everyone in my org**.
+18. On the **Microsoft 365 and Microsoft Teams** page, select **Show to everyone in my org**.
 
 	![](./media/L00-E2-T3-S17.png)
 
@@ -586,31 +650,31 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 21. You will be redirected to **Show in Teams app store for org** and see a notification: **Your agent is submitted and waiting for approval from your Teams admin**. Close the tab.
 
----
-
 ## Exercise 3: Upload Zava Knowledge Files to SharePoint
 
-In this exercise, you will uploads the Zava sample business documents to the SharePoint HR and Finance sites. These files contain the sensitive data — including employee PII, payroll records, credit card numbers, and financial forecasts — that will trigger security detections and DLP policy matches throughout Labs 04, 05, and 07.
-
----
+In this exercise, you will uploads the Zava sample business documents to the SharePoint HR and Finance sites. These files contain the sensitive data - including employee PII, payroll records, credit card numbers, and financial forecasts - that will trigger security detections and DLP policy matches throughout Labs 04, 05, and 07.
 
 ### Task 1: Upload Files to the Zava HR SharePoint Site
 
-1. Open a new browser tab and navigate to **https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>**.
+1. Open a new tab and paste the **HR site URL** that you copied in **Exercise 0,Step 13-14** in the following format: 
 
-   > **Note:** Replace `[TenantPrefix]` with your tenant prefix from the **Environment** tab.
+   	```
+	https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>
+	```
 
-3. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
+1. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
 
 	![](./media/pp59.png)
 
-4. In the file picker, navigate to the **C:\LabFiles\lab file\HR** folder on your lab VM desktop.
+1. Browse to **C:\LabFiles\lab file\HR (1)**, select all the HR documents and files **(2)**, and then click **Open (3)** to upload them.
 
-5. Select the following files and then select **Open** to upload them:
+	![](./media/new58.png)
+
+1. Select the following files and then select **Open** to upload them:
 
    | Filename | Contains |
-   |---|---|
-   | `Zava_HR_Policy_2024.docx` | Leave and disciplinary policy — no PII |
+   |----|----|
+   | `Zava_HR_Policy_2024.docx` | Leave and disciplinary policy - no PII |
    | `Zava_Employee_Records.xlsx` | Employee IDs (format: ZVA123456), names, DOB, salary |
    | `Zava_Payroll_Q1_2025.xlsx` | Payroll data with credit card numbers in expense column |
    | `Zava_Onboarding_Guide.docx` | Standard onboarding content |
@@ -619,70 +683,70 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
    | `Zava_Termination_Checklist.docx` | Departing employee process with names and dates |
    | `Zava_Sick_Leave_Report.xlsx` | Employee names and illness reasons |
 
-6. Wait for all 8 files to finish uploading.
+1. Wait for all 8 files to finish uploading.
 
-7. On the **Documents** page, confirm that all 8 files appear in the document library.
+1. On the **Documents** page, confirm that all 8 files appear in the document library.
 
 	![](./media/l0e3t1s6.png)
 
----
-
 ### Task 2: Upload Files to the Zava Finance SharePoint Site
 
-1. Open a new browser tab and navigate to **https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>**.
+1. Open a new tab and paste the **Operations site URL** that you copied in **Exercise 0,Step 17-18** in the following format: 
 
-   > **Note:** Replace `[TenantPrefix]` with your tenant prefix from the **Environment** tab.
+   	```
+	https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>
 
-2. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
+1. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
    
 	![](./media/pp60.png)
 
-4. In the file picker, navigate to the **C:\LabFiles\lab file\Operations** folder on your lab VM desktop.
+1. Browse to **C:\LabFiles\lab file\Operations (1)**, select all the Operations documents and files **(2)**, and then click **Open (3)** to upload them.
 
-5. Select the following files and then select **Open** to upload them:
+	![](./media/new59.png)
+
+
+1. Select the following files and then select **Open** to upload them:
 
    | Filename | Contains |
-   |---|---|
+   |----|----|
    | `Zava_Budget_2025.xlsx` | Department budgets and cost centres |
    | `Zava_Invoice_Log.xlsx` | Vendor invoices with IBAN and account numbers |
    | `Zava_Expense_Report_Alex.xlsx` | Alex Wilber's expenses with Visa credit card number |
-   | `Zava_Audit_Report_2024.docx` | Internal audit findings — marked Confidential |
-   | `Zava_Contracts_External.docx` | Third-party vendor contract — externally shared |
+   | `Zava_Audit_Report_2024.docx` | Internal audit findings - marked Confidential |
+   | `Zava_Contracts_External.docx` | Third-party vendor contract - externally shared |
    | `Zava_Financial_Projections.xlsx` | Revenue forecasts with broad SharePoint permissions |
 
-6. Wait for all 6 files to finish uploading.
+1. Wait for all 6 files to finish uploading.
 
-7. On the **Documents** page, confirm that all 6 files appear in the document library.
+1. On the **Documents** page, confirm that all 6 files appear in the document library.
 
     ![](./media/l0e3t2s6.png)
 
----
 
 ### Task 3: Verify Agents in the Microsoft Agent 365 Agent Registry
 
-1. Open a new browser tab and navigate to `https://admin.cloud.microsoft/`. Sign in with **ODL_User** credentials if prompted.
+1. Open a new browser tab and navigate to . Sign in with **ODL_User** credentials if prompted.
+
+    ```
+	https://admin.cloud.microsoft/
+	```
 
 	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
 	- **Password:** <inject key="AzureAdUserPassword"></inject>
 
-2. In the left navigation pane, expand **Agents** and then select **All agents**.
-
-    ![](./media/l0e3t3s1.png)
-
-3. On this page, confirm that the following three agents appear in the list. You can search for `Zava` in the search box to filter the results.
+1. Select **Agents (1)** > **All agents (2)**, and verify that the following agents **(3)** appear in the registry with an **Available** status.
 
    | Agent Name | Status |
-   |---|---|
+   |----|----|
    | Zava HR Assistant | Available | 
    | Zava Finance Agent | Available | 
    | Zava IT Support Agent | Available |
 
-	  ![](./media/pp61.png)
+	  ![](./media/new60.png)
 
 	  >**Note:** It may take up to 10 minutes after publishing in Copilot Studio for agents to appear in the Agent Registry. If the agents are not visible, wait 10 minutes and then refresh the page.
-	  
----
+
 
 ## Exercise 4: Enable Organizational Setup
 
@@ -696,11 +760,14 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 	- **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the Exchange admin center, select the **Cloud Shell icon** from the upper-right corner of the page to launch an Azure Cloud Shell session
 
-	![](./media/ex-1.png)
+1. Select the **Cloud Shell (1)** icon from the top menu, and then choose **PowerShell (2)** as the Cloud Shell environment.
 
-	>**Note**: If prompted, complete the Cloud Shell initialization before proceeding.
+	![](./media/new61.png)
+
+1. In the **Getting started** pane, select **No storage account required (1)**, select **your subscription (2)**, and then select **Apply (3)**.
+
+	![](./media/new62.png)
 
 1. After the Cloud Shell session is ready and displays the PowerShell prompt, run the following command to disconnect the current Exchange Online session
 
@@ -725,7 +792,7 @@ by running the following command to initiate a new Exchange Online connection us
 
 		![](./media/ex-7.png)
 
-1. After the Exchange Online PowerShell session is successfully connected, run the following command to enable organization customization:
+1. After the Exchange Online PowerShell session is successfully connected, run the following command to prepare the Exchange Online organization for advanced configuration tasks:
 
     ```
     Enable-OrganizationCustomization
@@ -733,11 +800,12 @@ by running the following command to initiate a new Exchange Online connection us
 
 	![](./media/ex-8.png)
 
-     >**Note**: This command prepares the Exchange Online organization for advanced configuration tasks. If organization customization has already been enabled, the command returns a message indicating that no further action is required. Continue with the next step in the lab. This may take upto 24 hours to get organization custimaztion enabled
-	
+     >**Note**: This may take upto 24 hours to get organization custimaztion enabled.
 
----
+     > **Note:** If the message **"This operation is not required. Organization is already enabled for customization."** appears, no further action is needed and you can proceed to the next lab.
+
+	  ![](./media/new63.png)	 
 
 ## Summary
 
-In this lab, you completed the full environment baseline for the Zava Corporation AI security course. You created a role-assignable security group in the Microsoft Entra admin center, configured ODL User as owner and member, assigned the Privileged Role Administrator role, and enabled the group as the authorised Copilot Studio Authors group in Power Platform Admin Center. You enabled Entra Agent Identity for Copilot Studio at the environment level, added a SharePoint connection in the Power Apps maker portal, and created three Copilot Studio agents — Zava HR Assistant, Zava Finance Agent, and Zava IT Support Agent — each connected to a designated knowledge source, published across Teams and Microsoft 365 channels. You uploaded 14 sample business documents containing realistic sensitive data across the Zava HR and Finance SharePoint sites, and verified that all three agents are registered and Active in the Microsoft Agent 365 Agent Registry. The environment is now fully prepared for security configuration in Labs 01 through 07.
+In this lab, you completed the full environment baseline for the Zava Corporation AI security course. You created a role-assignable security group in the Microsoft Entra admin center, configured ODL User as owner and member, assigned the Privileged Role Administrator role, and enabled the group as the authorised Copilot Studio Authors group in Power Platform Admin Center. You enabled Entra Agent Identity for Copilot Studio at the environment level, added a SharePoint connection in the Power Apps maker portal, and created three Copilot Studio agents - Zava HR Assistant, Zava Finance Agent, and Zava IT Support Agent - each connected to a designated knowledge source, published across Teams and Microsoft 365 channels. You uploaded 14 sample business documents containing realistic sensitive data across the Zava HR and Finance SharePoint sites, and verified that all three agents are registered and Active in the Microsoft Agent 365 Agent Registry. The environment is now fully prepared for security configuration in Labs 01 through 07.
