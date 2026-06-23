@@ -60,6 +60,7 @@ In this lab, you will locate the Zava agent identities, review their current con
 1. On the **Agent identities** page, select **Zava Finance Agent (Microsoft Copilot Studio)**.
 
 	![](./media/l02-e1-t2-s1.png)
+   
 2. On the **Overview** page, review and note the following fields:
 
    - **Status** - confirm it reads **Active**.
@@ -78,8 +79,6 @@ In this lab, you will locate the Zava agent identities, review their current con
 	   ![](./media/l02-e1-t2-s3.png)
 
       > **Note:** In a newly provisioned environment, both values will show **0**. This confirms that the Zava Finance Agent identity has not been granted any API permissions or Entra directory roles, which is the expected least-privilege starting state.
-
-
 
 ### Task 3: Assign Patti Fernandes as Owner of the Zava Finance Agent Identity
 
@@ -100,8 +99,6 @@ In this lab, you will locate the Zava agent identities, review their current con
 	![](./media/l02-e1-t3-s4.png)
 
    > **Note:** Assigning an owner to an agent identity establishes accountability for that identity within the Entra governance model. Owners receive access review notifications and are responsible for attesting to the identity's continued need and appropriate access.
-
-
 
 ## Exercise 2: Disable and Re-enable the Zava HR Assistant
 
@@ -124,8 +121,6 @@ In this lab, you will locate the Zava agent identities, review their current con
 5. On the **Overview** page, confirm that **Status** now reads **Disabled**.
 
 	![](./media/l02-e2-t1-s4.png)
-
-
 
 ### Task 2: Verify that End-User Access is Blocked
 
