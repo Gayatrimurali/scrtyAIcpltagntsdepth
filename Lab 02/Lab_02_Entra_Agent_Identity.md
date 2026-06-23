@@ -44,7 +44,7 @@ In this lab, you will locate the Zava agent identities, review their current con
 3. Confirm that the following three agents appear in the list:
 
    | Display Name | Status |
-   |||
+   |----|----|
    | Zava HR Assistant (Microsoft Copilot Studio) | Active |
    | Zava Finance Agent (Microsoft Copilot Studio) | Active |
    | Zava IT Support Agent (Microsoft Copilot Studio) | Active |
@@ -184,8 +184,6 @@ In this lab, you will locate the Zava agent identities, review their current con
 	![](./media/l02-e2-t3-s5.png)
 
 7. Repeat the end-user access check to confirm the agent is accessible again.
-
-
 
 ## Summary
 

@@ -274,6 +274,20 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 	![](./media/new21.png)
 
+1. In the navigation pane, select **Licensing**.
+
+1. In the Licensing pane, select Pay-as-you-go plans. The Billing plans page is displayed.
+
+1. Select **New billing plan**. The **New billing plan** pane is displayed.
+
+1. Select **Microsoft 365 Copilot Chat**.
+
+1. In the Name field, provide a name as **zavaplan-<inject key="Deployment ID" enableCopy="false"></inject>** for your new billing plan.
+
+1. From the **Azure subscription** dropdown list, select your **Azure subscription**.
+
+1. From the Resource group dropdown list, select **labvm** resource group. Then select **Save**.
+
 1. On the **Copilot Studio Authors** panel, select the **Edit** icon near security group.
 
 	![](./media/new22.png)
@@ -446,11 +460,11 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 1. On the agent configuration page, locate the **Channels** tab on the top section (select **+** if it is not directly visible).
 
-	   ![](./media/pp30.png)
+	![](./media/pp30.png)
 
 1. Select **Microsoft 365 and Microsoft Teams** to add them as channels.
 
-	   ![](./media/new1.6.png)
+	![](./media/new1.6.png)
 
 1. Then select **Add channel**.
 
@@ -640,24 +654,26 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 In this exercise, you will uploads the Zava sample business documents to the SharePoint HR and Finance sites. These files contain the sensitive data - including employee PII, payroll records, credit card numbers, and financial forecasts - that will trigger security detections and DLP policy matches throughout Labs 04, 05, and 07.
 
-
-
 ### Task 1: Upload Files to the Zava HR SharePoint Site
 
-1. Open a new browser tab and navigate to **https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>**.
+1. Open a new tab and paste the **HR site URL** that you copied in **Exercise 0,Step 13-14** in the following format: 
 
-   > **Note:** Replace `[TenantPrefix]` with your tenant prefix from the **Environment** tab.
+   	```
+	https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>
+	```
 
-3. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
+1. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
 
 	![](./media/pp59.png)
 
-4. In the file picker, navigate to the **C:\LabFiles\lab file\HR** folder on your lab VM desktop.
+1. Browse to **C:\LabFiles\lab file\HR (1)**, select all the HR documents and files **(2)**, and then click **Open (3)** to upload them.
 
-5. Select the following files and then select **Open** to upload them:
+	![](./media/new58.png)
+
+1. Select the following files and then select **Open** to upload them:
 
    | Filename | Contains |
-   |||
+   |----|----|
    | `Zava_HR_Policy_2024.docx` | Leave and disciplinary policy - no PII |
    | `Zava_Employee_Records.xlsx` | Employee IDs (format: ZVA123456), names, DOB, salary |
    | `Zava_Payroll_Q1_2025.xlsx` | Payroll data with credit card numbers in expense column |
@@ -667,30 +683,32 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
    | `Zava_Termination_Checklist.docx` | Departing employee process with names and dates |
    | `Zava_Sick_Leave_Report.xlsx` | Employee names and illness reasons |
 
-6. Wait for all 8 files to finish uploading.
+1. Wait for all 8 files to finish uploading.
 
-7. On the **Documents** page, confirm that all 8 files appear in the document library.
+1. On the **Documents** page, confirm that all 8 files appear in the document library.
 
 	![](./media/l0e3t1s6.png)
 
-
-
 ### Task 2: Upload Files to the Zava Finance SharePoint Site
 
-1. Open a new browser tab and navigate to **https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>**.
+1. Open a new tab and paste the **Operations site URL** that you copied in **Exercise 0,Step 17-18** in the following format: 
 
-   > **Note:** Replace `[TenantPrefix]` with your tenant prefix from the **Environment** tab.
+   	```
+	https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>
 
-2. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
+1. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
    
 	![](./media/pp60.png)
 
-4. In the file picker, navigate to the **C:\LabFiles\lab file\Operations** folder on your lab VM desktop.
+1. Browse to **C:\LabFiles\lab file\Operations (1)**, select all the Operations documents and files **(2)**, and then click **Open (3)** to upload them.
 
-5. Select the following files and then select **Open** to upload them:
+	![](./media/new59.png)
+
+
+1. Select the following files and then select **Open** to upload them:
 
    | Filename | Contains |
-   |||
+   |----|----|
    | `Zava_Budget_2025.xlsx` | Department budgets and cost centres |
    | `Zava_Invoice_Log.xlsx` | Vendor invoices with IBAN and account numbers |
    | `Zava_Expense_Report_Alex.xlsx` | Alex Wilber's expenses with Visa credit card number |
@@ -698,38 +716,36 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
    | `Zava_Contracts_External.docx` | Third-party vendor contract - externally shared |
    | `Zava_Financial_Projections.xlsx` | Revenue forecasts with broad SharePoint permissions |
 
-6. Wait for all 6 files to finish uploading.
+1. Wait for all 6 files to finish uploading.
 
-7. On the **Documents** page, confirm that all 6 files appear in the document library.
+1. On the **Documents** page, confirm that all 6 files appear in the document library.
 
     ![](./media/l0e3t2s6.png)
 
 
-
 ### Task 3: Verify Agents in the Microsoft Agent 365 Agent Registry
 
-1. Open a new browser tab and navigate to `https://admin.cloud.microsoft/`. Sign in with **ODL_User** credentials if prompted.
+1. Open a new browser tab and navigate to . Sign in with **ODL_User** credentials if prompted.
+
+    ```
+	https://admin.cloud.microsoft/
+	```
 
 	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
 	- **Password:** <inject key="AzureAdUserPassword"></inject>
 
-2. In the left navigation pane, expand **Agents** and then select **All agents**.
-
-    ![](./media/l0e3t3s1.png)
-
-3. On this page, confirm that the following three agents appear in the list. You can search for `Zava` in the search box to filter the results.
+1. Select **Agents (1)** > **All agents (2)**, and verify that the following agents **(3)** appear in the registry with an **Available** status.
 
    | Agent Name | Status |
-   |||
+   |----|----|
    | Zava HR Assistant | Available | 
    | Zava Finance Agent | Available | 
    | Zava IT Support Agent | Available |
 
-	  ![](./media/pp61.png)
+	  ![](./media/new60.png)
 
 	  >**Note:** It may take up to 10 minutes after publishing in Copilot Studio for agents to appear in the Agent Registry. If the agents are not visible, wait 10 minutes and then refresh the page.
-	  
 
 
 ## Exercise 4: Enable Organizational Setup
@@ -744,11 +760,14 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 	- **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. In the Exchange admin center, select the **Cloud Shell icon** from the upper-right corner of the page to launch an Azure Cloud Shell session
 
-	![](./media/ex-1.png)
+1. Select the **Cloud Shell (1)** icon from the top menu, and then choose **PowerShell (2)** as the Cloud Shell environment.
 
-	>**Note**: If prompted, complete the Cloud Shell initialization before proceeding.
+	![](./media/new61.png)
+
+1. In the **Getting started** pane, select **No storage account required (1)**, select **your subscription (2)**, and then select **Apply (3)**.
+
+	![](./media/new62.png)
 
 1. After the Cloud Shell session is ready and displays the PowerShell prompt, run the following command to disconnect the current Exchange Online session
 
@@ -773,7 +792,7 @@ by running the following command to initiate a new Exchange Online connection us
 
 		![](./media/ex-7.png)
 
-1. After the Exchange Online PowerShell session is successfully connected, run the following command to enable organization customization:
+1. After the Exchange Online PowerShell session is successfully connected, run the following command to prepare the Exchange Online organization for advanced configuration tasks:
 
     ```
     Enable-OrganizationCustomization
@@ -781,10 +800,11 @@ by running the following command to initiate a new Exchange Online connection us
 
 	![](./media/ex-8.png)
 
-     >**Note**: This command prepares the Exchange Online organization for advanced configuration tasks. If organization customization has already been enabled, the command returns a message indicating that no further action is required. Continue with the next step in the lab. This may take upto 24 hours to get organization custimaztion enabled
-	
+     >**Note**: This may take upto 24 hours to get organization custimaztion enabled.
 
+     > **Note:** If the message **"This operation is not required. Organization is already enabled for customization."** appears, no further action is needed and you can proceed to the next lab.
 
+	  ![](./media/new63.png)	 
 
 ## Summary
 

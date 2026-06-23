@@ -49,8 +49,6 @@ This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary
 
       >**Note:** In a freshly configured environment, active user counts and agents without owners may show zero. This is expected. The metrics will populate as agents are used throughout the course.
 
-
-
 ### Task 2: Inspect and Approve the Zava Agents in the Agent Registry
 
 1. In the left navigation pane, select **Agents**. Select **All agents**. Then select the **Requests** tab.
@@ -95,7 +93,7 @@ This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary
     
 	![](./media/l01-e1-t2-s12.png)
 
-1. Repeat the above steps 1 to step 12 for **Zava HR Agent**
+1. Repeat the above steps 1 to step 11 for **Zava HR Agent**
 
 
 ### Task 3: Approve an Agent in Teams Admin Center
