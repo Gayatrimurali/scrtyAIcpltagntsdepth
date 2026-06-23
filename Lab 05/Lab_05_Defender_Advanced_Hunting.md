@@ -1,18 +1,16 @@
-# Lab 05: Microsoft Defender — AI Agent Inventory and Threat Hunting
+# Lab 05: Microsoft Defender - AI Agent Inventory and Threat Hunting
+
+### Estimated time: 60 Minutes
 
 ## Introduction
 
-Microsoft Defender for Cloud Apps provides a dedicated AI agent inventory that discovers all Copilot Studio custom agents in the tenant and exposes them for security investigation. Combined with the Advanced Hunting `AIAgentsInfo` table in Microsoft Defender XDR, the security team can query agent configurations, detect misconfigurations, identify governance gaps, and proactively hunt for risky agent behaviour — all without leaving the Defender portal.
+Microsoft Defender for Cloud Apps provides a dedicated AI agent inventory that discovers all Copilot Studio custom agents in the tenant and exposes them for security investigation. Combined with the Advanced Hunting `AIAgentsInfo` table in Microsoft Defender XDR, the security team can query agent configurations, detect misconfigurations, identify governance gaps, and proactively hunt for risky agent behaviour - all without leaving the Defender portal.
 
 In this lab, you will enable Defender preview features, activate the Copilot Studio AI agent inventory, and connect it to Power Platform. Patti Fernandes will then explore the AI agent inventory, investigate Zava agent configurations, and run Advanced Hunting KQL queries to identify potential security risks across the Zava agent estate.
 
----
-
 ## Scenario
 
-Zava's SOC team has been asked to confirm that all deployed AI agents are visible in the Defender portal and that the security team has the tooling in place to hunt for misconfigured or risky agents. Patti Fernandes will use the AI agent inventory to review Zava agent properties — including authentication type, knowledge sources, and owner assignments — and run a series of community and custom KQL queries to surface any configuration risks. Any findings will be documented for the CISO review at the end of Day 2.
-
----
+Zava's SOC team has been asked to confirm that all deployed AI agents are visible in the Defender portal and that the security team has the tooling in place to hunt for misconfigured or risky agents. Patti Fernandes will use the AI agent inventory to review Zava agent properties - including authentication type, knowledge sources, and owner assignments - and run a series of community and custom KQL queries to surface any configuration risks. Any findings will be documented for the CISO review at the end of Day 2.
 
 ## Objectives
 
@@ -26,14 +24,6 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 - Run a custom KQL query to review all Zava agent configurations in a single view.
 - Review the Defender Alerts queue for Cloud Apps agent-related activity.
 
----
-
-## Lab Duration
-
-Estimated time: **60 minutes**
-
----
-
 ## Exercise 1: Enable Defender Preview Features
 
 ### Task 1: Enable Preview Features in Microsoft Defender XDR
@@ -46,9 +36,9 @@ Estimated time: **60 minutes**
 
 2. Sign in with **ODL User** credentials if prompted.
 
-3. In the left navigation pane, expand **System(1)** and select **Settings(2)**.
+3. In the left navigation pane, expand **System (1)** and select **Settings (2)**.
 
-4. On the **Settings** page, select **Microsoft Defender XDR(3)**.
+4. On the **Settings** page, select **Microsoft Defender XDR (3)**.
 
    ![](./media/l05-e1-t1-s4.png)
 
@@ -70,7 +60,7 @@ Estimated time: **60 minutes**
 
         ![](./media/l05-e1-t1-s8.png)
 
----
+
 
 ## Exercise 2: Enable the Copilot Studio AI Agent Inventory
 
@@ -90,28 +80,32 @@ Estimated time: **60 minutes**
 
 1. Click on **Manage Files** and select **Upload** 
 
-   ![](./media/appid2.png)
- 
-    - Upload **Create-CopilotWebhookApp.ps1** from C:\LabFiles\Create-CopilotWebhookApp.ps1
+    ![](./media/appid2.png)
+
+    - In the **C:\LabFiles (1)** folder, select the **Create-CopilotWebhookApp.ps1 (2)** script and then select **Open (3)**.
+
+       ![](./media/l3-49.png)
     
-    - make sure script is uploaded by the confirmation pop-up
+    - Make sure script is uploaded by the confirmation pop-up
 
        ![](./media/appid3.png)
 
 
-1. Execute the command in the cloudshell 
+1. Execute the following command in the cloudshell :
 
     ```
     .\Create-CopilotWebhookApp.ps1 -TenantId "<Paste your TenantId>" -Endpoint "https://mcsaiagents.security.core.microsoft/v1/protection" -DisplayName "Copilot Security Integration - Production" -FICName "ProductionFIC"
     ```
 
-    - Navigate **Microsoft Entra ID** on the azure portal
+    >**Note:** Replace the **TenantId** in the command before running it in the clodshell. Follow the steps below to copy the Tenant ID: 
 
-         ![](./media/appid4.png)
+     - Navigate **Microsoft Entra ID** on the azure portal
 
-    - Copy **Tenant ID** to use in the command
+        ![](./media/appid4.png)
 
-         ![](./media/appid5.png)
+      - Copy **Tenant ID** to use in the command
+
+        ![](./media/appid5.png)
 
    ![](./media/appid6.png)
 
@@ -119,7 +113,7 @@ Estimated time: **60 minutes**
 
    ![](./media/appid7.png)
 
-1. Copy the App ID as it will be used in task while connecting copilot and defender
+1. Copy the **App ID** and paste it in the **Notepad** as it will be used in task while connecting Copilot and Defender.
 
    ![](./media/appid8.png)
 
@@ -137,7 +131,11 @@ Estimated time: **60 minutes**
 
    ![](./media/l05-e2-t1-s5.png)
 
-6. Enter the required App ID in the App ID field and click Save to complete the Copilot Studio real-time protection configuration.
+1. In the **Copilot Studio real-time protection** pane, select **Copy** to copy the **Power Platform integration URL** for use in the Power Platform admin center.
+
+   ![](./media/img5.png)   
+
+6. Enter the required **App ID** in the App ID field and click **Save** to complete the Copilot Studio real-time protection configuration.
 
    ![](./media/l05-e2-t1-s6.png)
 
@@ -145,7 +143,7 @@ Estimated time: **60 minutes**
 
    > **Note:** Enabling this setting initiates the connection between Defender for Cloud Apps and Copilot Studio. The second step in Power Platform Admin Center must be completed before the green Connected status appears.
 
----
+
 
 ### Task 3: Complete Onboarding in Power Platform Admin Center
 
@@ -175,10 +173,10 @@ Estimated time: **60 minutes**
 
    ![](./media/l5e2t2s7.png)
    
-   >Get Endpoint link and Entra App Id from the defender portal
+   >**Note:** Get Endpoint link and Entra App Id from the defender portal.
+
       ![](./media/l05-e2-t1-s6.png)
 
----
 
 ### Task 3: Confirm Connected Status in the Defender Portal
 
@@ -194,11 +192,9 @@ Estimated time: **60 minutes**
 
 6. Confirm that a green **Connected** indicator is displayed on the **Copilot Studio**.
 
-   ![](./media/l5e2t3s3.png)
+   ![](./media/l3-50.png)
 
    > **Note:** It can take time for the initial connection status to update after completing both onboarding steps.
-
----
 
 ## Exercise 3: Explore the AI Agent Inventory
 
@@ -208,25 +204,23 @@ Estimated time: **60 minutes**
 
    ![](./media/l5e3t1s2.png)
 
-   > **Note:** If **AI Agents** is not visible under Assets, confirm that preview features were enabled in Exercise 1 and that the inventory connection completed in Exercise 2. Wait up to 30 minutes after completing Exercise 2 before retrying.
+    > **Note:** If **AI Agents** is not visible under Assets, confirm that preview features were enabled in Exercise 1 and that the inventory connection completed in Exercise 2. Wait up to 30 minutes after completing Exercise 2 before retrying.
 
-3. On the **AI Agents** page, review the full list of agents discovered in the Zava tenant.
+1. On the **AI Agents** page, review the full list of agents discovered in the Zava tenant.
 
-4. In the **Platform (1)** filter, select **Copilot Studio (2)** and **Apply (3)** to filter the view to Copilot Studio custom agents only.
+1. In the **Platform (1)** filter, select **Copilot Studio (2)** and **Apply (3)** to filter the view to Copilot Studio custom agents only.
 
    ![](./media/l5e3t1s4.png)
 
-5. Confirm that the following three agents appear in the inventory:
+1. Confirm that the following three agents appear in the inventory:
 
    | Agent Name | Status | Platform |
-   |---|---|---|
+   | -----|------|---------|
    | Zava HR Assistant | Published | Copilot Studio |
    | Zava Finance Agent | Published | Copilot Studio |
    | Zava IT Support Agent | Published | Copilot Studio |
 
    ![](./media/l5e3t1s5.png)
-
----
 
 ### Task 2: Review the Zava HR Assistant Agent Details
 
@@ -234,7 +228,7 @@ Estimated time: **60 minutes**
 
    ![](./media/l5e3t2s1.png)
 
-2. On the details panel, review and note the following fields:
+1. On the details panel, review and note the following fields:
 
    - **Agent name**
    - **Status**
@@ -246,9 +240,7 @@ Estimated time: **60 minutes**
    - **Active alerts**
    - **Entra Agent ID**
 
-   ![](./media/l5e3t2s3.png)
-
----
+     ![](./media/l5e3t2s3.png)
 
 ### Task 3: Use Go Hunt to Open Advanced Hunting for the Zava HR Assistant
 
@@ -256,21 +248,19 @@ Estimated time: **60 minutes**
 
    ![](./media/l5e3t3s1.png)
 
-3. Confirm that the browser navigates to **Investigation & response > Hunting > Advanced hunting** with a pre-populated query scoped to the Zava HR Assistant agent.
+1. Confirm that the browser navigates to **Investigation & response **(1)** > Hunting **(2)** > Advanced hunting (3)** with a pre-populated query scoped to the Zava HR Assistant agent.
 
    ![](./media/l5e3t3s2.png)
 
-4. Review the pre-populated query to understand its structure.
+1. Review the pre-populated query to understand its structure.
 
-5. Select **Run query** to execute it.
+1. Select **Run query** to execute it.
 
    ![](./media/l5e3t3s3.png)
 
-6. Review the results returned in the query output panel.
+1. Review the results returned in the query output panel.
 
    ![](./media/l5e3t3s4.png)
-
----
 
 ## Exercise 4: Run Advanced Hunting Queries Against AIAgentsInfo
 
@@ -285,18 +275,15 @@ Estimated time: **60 minutes**
     ```
 
 3. Sign in with **Patti Fernandes** credentials from the **Resources** tab.
+
    - **Email:** <inject key="User 01 UPN"></inject>
    - **Password:** <inject key="User's Password"></inject>
 
-4. In the left navigation pane, select **Investigation & response**.
-
-5. Under **Investigation & response**, select **Hunting**.
-
-6. Select **Advanced hunting**.
+4. In the left navigation pane, select **Investigation & response **(1)** > Hunting **(2)** > Advanced hunting (3)**.
 
    ![](./media/l5e3t3s2.png)
 
----
+
 
 ### Task 2: Run a Custom Zava Agent Configuration Review Query
 
@@ -341,13 +328,12 @@ Estimated time: **60 minutes**
 7. In the **Save query** panel, enter the following and click **Save**
 
    - **Query name:** `Zava Agent Configuration Review`
+
    - **Location:** Select **My queries**.
 
    ![](./media/l5e4t2s5.png)
 
    ![](./media/l5e4t2s6.png)
-
----
 
 ## Exercise 5: Review the Defender Alerts Queue for Agent-Related Activity [Optional]
 
@@ -355,23 +341,23 @@ Estimated time: **60 minutes**
 
 1. Remain signed in as **Patti Fernandes** in the Microsoft Defender portal.
 
-2. In the left navigation pane, select **Incidents & alerts**.
+1. In the left navigation pane, select **Incidents & alerts**.
 
-3. Select **Alerts**.
+1. Select **Alerts**.
 
-4. On the **Alerts** page, select **Add filter**.
+1. On the **Alerts** page, select **Add filter**.
 
-5. In the filter dropdown, select **Service source**.
+1. In the filter dropdown, select **Service source**.
 
-6. Select **Microsoft Defender for Cloud Apps** as the filter value.
+1. Select **Microsoft Defender for Cloud Apps** as the filter value.
 
-7. Select **Apply**.
+1. Select **Apply**.
 
-8. Review the alerts returned in the filtered view.
+1. Review the alerts returned in the filtered view.
 
-9. If any alerts are present, select an alert to open its detail panel.
+1. If any alerts are present, select an alert to open its detail panel.
 
-10. On the alert detail panel, review the following fields:
+1. On the alert detail panel, review the following fields:
 
     - **Alert name**
     - **Severity**
@@ -380,11 +366,9 @@ Estimated time: **60 minutes**
     - **Detection source**
     - **Activity log**
 
-11. Close the alert detail panel.
+1. Close the alert detail panel.
 
     > **Note:** In a newly configured lab environment, the Cloud Apps alerts queue may be empty or contain only connector-related events. Agent-related alerts will begin appearing as the Zava agents are invoked, real-time protection signals are generated, and policy violations occur across Day 2 and Day 3 labs. This step establishes familiarity with the alerts queue that Patti will use for incident investigation in Day 3.
-
----
 
 ### Task 2: Check for Any Agent-Specific Incidents [Optional]
 
@@ -404,14 +388,12 @@ Estimated time: **60 minutes**
 
 8. Close the incident and return to the **Incidents** page.
 
-   > **Note:** If no Zava-related incidents appear, this is expected at this stage of the course. Note the search and filter techniques demonstrated here — they will be used in Day 3 when active threat investigation tasks are introduced.
-
----
+   > **Note:** If no Zava-related incidents appear, this is expected at this stage of the course. Note the search and filter techniques demonstrated here - they will be used in Day 3 when active threat investigation tasks are introduced.
 
 ## Summary
 
 In this lab, you enabled Microsoft Defender preview features for Defender XDR and Defender for Cloud Apps, which are required to access the Copilot Studio AI agent inventory and the `AIAgentsInfo` advanced hunting schema. You enabled the Copilot Studio AI agent inventory in Defender for Cloud Apps settings and completed the corresponding onboarding step in Power Platform Admin Center to establish the data connection. You confirmed the green Connected status in the Defender portal. You explored the AI agent inventory under Assets, reviewed the Zava HR Assistant agent details including its authentication type, access control policy, knowledge sources, and owner assignments, and used the Go hunt action to open Advanced Hunting pre-filtered for that agent.
 
-As Patti Fernandes, you ran two community queries from the AI Agents folder — detecting agents with no authentication and agents with hard-coded credentials — and reviewed the results against the Zava agent estate. You ran a custom Zava Agent Configuration Review KQL query to surface key security properties for all three Zava agents in a single view, and saved it for future use. You ran a second custom query to identify agents with overly broad access control policies. Finally, you reviewed the Defender Alerts queue filtered by Cloud Apps source and checked the Incidents page for any Zava-related activity, establishing the investigation baseline for Day 3.
+As Patti Fernandes, you ran two community queries from the AI Agents folder - detecting agents with no authentication and agents with hard-coded credentials - and reviewed the results against the Zava agent estate. You ran a custom Zava Agent Configuration Review KQL query to surface key security properties for all three Zava agents in a single view, and saved it for future use. You ran a second custom query to identify agents with overly broad access control policies. Finally, you reviewed the Defender Alerts queue filtered by Cloud Apps source and checked the Incidents page for any Zava-related activity, establishing the investigation baseline for Day 3.
 
 Day 2 is now complete. Zava's agents are governed by Conditional Access policies, sensitive data is classified with Purview labels and protected by DLP controls, and the security team has full visibility into agent configurations and activity through the Defender AI agent inventory and Advanced Hunting.

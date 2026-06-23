@@ -658,7 +658,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 1. Open a new tab and paste the **HR site URL** that you copied in **Exercise 0,Step 13-14** in the following format: 
 
-   	```
+    ```
 	https://[TenantPrefix].sharepoint.com/sites/HR<inject key="Deployment ID" enableCopy="false"></inject>
 	```
 
@@ -695,6 +695,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
    	```
 	https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>
+	```
 
 1. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
    
