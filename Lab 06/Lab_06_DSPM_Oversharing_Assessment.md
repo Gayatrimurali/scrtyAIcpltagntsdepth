@@ -197,7 +197,7 @@ You will launch a custom data risk assessment against the Zava HR and Finance Sh
 
 In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot interaction events that reference sensitive labelled files across the Zava HR and Finance SharePoint sites. These interactions will surface in the DSPM Activity Explorer and audit logs, creating the investigation data used in Exercises 5 and Lab 07.
 
-### Task 1: Generate HR Data Interaction Signals as Adele Vance
+### Task 1: Generate HR Data Interaction Signals as Patti Fernandes
 
 1. Open a new **InPrivate** or **Incognito** browser window. Navigate to Copilot studio and Sign in with **Patti Fernandes** credentials from the **Resources** tab. Complete the authentication steps if necessary.
 
@@ -282,7 +282,7 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
 	![](./media/l06-e3-t2-s4.png)
 
-   > **Note:** This Insider Risk Management policy detects risky prompts and responses in Microsoft 365 Copilot, agents, and other generative AI apps - including prompt injection attempts, accessing protected materials, and other high-risk interaction patterns. The Adele Vance interactions generated in Exercise 2 will be evaluated by this policy.
+   > **Note:** This Insider Risk Management policy detects risky prompts and responses in Microsoft 365 Copilot, agents, and other generative AI apps - including prompt injection attempts, accessing protected materials, and other high-risk interaction patterns. The Patti Fernandes interactions generated in Exercise 2 will be evaluated by this policy.
 
 
 
