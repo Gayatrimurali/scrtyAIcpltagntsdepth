@@ -82,5 +82,51 @@
         "Order": 9
       }
     ]
+  },
+  {
+    "Name": "Implement Agent 365 to observe, govern, and secure Al apps, Copilot & Agents",
+    "Language": "Japanese",
+    "Files": [
+      {
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Unlock-Innovation-with-Agentic-AI-in-Copilot-Studio/refs/heads/main/LabFiles/setup-guide/japanese.md",
+      "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/getting-started-page.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2000/Lab_00_Environment_Setup.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2001/Lab_01_Agent_Discovery_and_Registry_Management.md",
+        "Order": 4
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2002/Lab_02_Entra_Agent_Identity.md",
+        "Order": 5
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2003/Lab_03_Conditional_Access_Agent_Identities.md",
+        "Order": 6
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2004/Lab_04_Purview_Sensitivity_Labels_DLP.md",
+        "Order": 7
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2005/Lab_05_Defender_Advanced_Hunting.md",
+        "Order": 8
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2006/Lab_06_DSPM_Oversharing_Assessment.md",
+        "Order": 9
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/scrtyAIcpltagntsdepth/refs/heads/SecureAIwithA365JA-JP/Lab%2007/Lab_07_Audit_Retention_Security_Copilot.md",
+        "Order": 10
+      }
+    ]
   }
 ]
