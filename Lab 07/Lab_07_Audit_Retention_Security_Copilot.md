@@ -27,7 +27,7 @@ Patti Fernandes will investigate audit records with the Zava HR Assistant, revie
 
 ## Exercise 1: Generate Agent Interaction Audit Signals
 
-### Task 1: Invoke the Zava HR Assistant as Adele Vance
+### Task 1: Invoke the Zava HR Assistant as Patti Fernandes
 
 1. Open a new **InPrivate** or **Incognito** browser window. Navigate to copilot studio using the blow URL and Sign in with **Patti Fernandes** credentials from the **Resources** tab.
 
@@ -93,7 +93,7 @@ Patti Fernandes will investigate audit records with the Zava HR Assistant, revie
 
 1. Open a new **InPrivate** or **Incognito** browser window. Navigate to `https://purview.microsoft.com`. Sign in with **Patti Fernandes** credentials from the **Resources** tab.
 
-    - **Email:** <inject key="User 02 UPN"></inject>
+    - **Email:** <inject key="User 01 UPN"></inject>
     - **Password:** <inject key="User's Password"></inject>
  
 
@@ -114,7 +114,7 @@ Patti Fernandes will investigate audit records with the Zava HR Assistant, revie
 
 5. Wait for the search job to complete.
 
-6. Review the results returned for Adele Vance's Copilot interactions.
+6. Review the results returned for Patti Fernandes's Copilot interactions.
 
 
 
@@ -126,7 +126,7 @@ Patti Fernandes will investigate audit records with the Zava HR Assistant, revie
 
    - **Operation** - confirm it reads `CopilotInteraction`.
    - **Workload** - confirm it reads `Copilot`.
-   - **UserId** - confirm it shows Adele Vance's UPN.
+   - **UserId** - confirm it shows Patti Fernandes's UPN.
    - **AppHost** - note the application surface where the interaction occurred.
    - **AccessedResources** - review any files listed. Note the file name, site URL, and `SensitivityLabelId` if present.
    - **AISystemPlugin** - note whether `BingWebSearch` appears, which indicates the interaction used Bing.
@@ -213,7 +213,7 @@ Patti Fernandes will investigate audit records with the Zava HR Assistant, revie
    - **Policy name** - confirm it references the **Zava - Block HR Data in M365 Copilot** policy from Lab 04.
    - **Rule name** - confirm it references **Block Copilot access to HR-labelled content**.
    - **Sensitivity label** - confirm the label triggered the match.
-   - **User** - confirm it shows Adele Vance.
+   - **User** - confirm it shows Patti Fernandes.
    - **Location** - confirm it shows the Microsoft 365 Copilot location.
 
 8. Close the detail panel.
@@ -303,7 +303,7 @@ Patti Fernandes will investigate audit records with the Zava HR Assistant, revie
 
 ## Summary
 
-In this lab, you generated targeted Copilot and agent interaction signals as Adele Vance by invoking the Zava HR Assistant with four prompts - including two that referenced sensitivity-labelled HR files - to create a meaningful forensic audit trail. As Patti Fernandes, you searched Purview Audit for CopilotInteraction events scoped to Patti Fernandes, reviewed the structured audit record fields including AccessedResources, SensitivityLabelId, AppHost, and ThreadId, and confirmed that sensitivity label metadata is captured in the interaction audit trail. You searched for Copilot Studio agent management events and reviewed the publish event record for one of the Zava agents, confirming the end-to-end administrative audit chain. You searched for DLP match events confirming that the Lab 04 policy generated audit records for blocked HR-labelled content interactions.
+In this lab, you generated targeted Copilot and agent interaction signals as Patti Fernandes by invoking the Zava HR Assistant with four prompts - including two that referenced sensitivity-labelled HR files - to create a meaningful forensic audit trail. As Patti Fernandes, you searched Purview Audit for CopilotInteraction events scoped to Patti Fernandes, reviewed the structured audit record fields including AccessedResources, SensitivityLabelId, AppHost, and ThreadId, and confirmed that sensitivity label metadata is captured in the interaction audit trail. You searched for Copilot Studio agent management events and reviewed the publish event record for one of the Zava agents, confirming the end-to-end administrative audit chain. You searched for DLP match events confirming that the Lab 04 policy generated audit records for blocked HR-labelled content interactions.
 
 You created the **Zava - Retain AI Interactions 5 Year** retention policy scoped to the Microsoft 365 Copilot and Copilot Chat location, covering all users across both Microsoft 365 Copilot and Copilot Studio agent interactions. You confirmed the policy is active and will apply to all interaction data stored in users' hidden Exchange mailbox folders.
 
