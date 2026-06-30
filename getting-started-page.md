@@ -33,7 +33,7 @@ The primary objective of these labs is to establish a comprehensive security and
 
 ## Getting Started with the lab
 
-Welcome to your Capstone Project Workshop, Let's begin by making the most of this experience:
+Welcome to your workshop. Let's begin by making the most of this experience:
 
 ## Accessing Your Lab Environment
 
