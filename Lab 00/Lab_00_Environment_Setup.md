@@ -78,9 +78,9 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 		![](./media/L00-E0-S8.png)
 
-1. On the **Add site owners and members** page, click on **Finish**.
+1. On the **Add site owners and members** blade, verify that **Patti Fernandes (1)** is listed as a member to be added, then click **Finish (2)**.
 
-	![](./media/l0n3.png)
+	![](./media/newww.png)
 
 1. Once the site is provisioned, select **Active sites (1)**, and verify that the HR site appears in the list. Click on the URL ending in **/sites/HR<inject key="Deployment ID" enableCopy="false"></inject> (2)**.
 
@@ -215,18 +215,9 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 	![](./media/new14.png)
 
-1. Select **No member selected** under **Select member(s)** to choose the user or group that will be assigned the **Privileged Role Administrator** role.
+1. On the **Add assignments** pane, select **copilotagentsecurity (1)** from the list, then click **Add (2)**.
 
 	![](./media/new15.png)
-
-1. Search for **copilotagentsecurity (1)**, select the **copilotagentsecurity (2)** group from the results, and then click **Select (3)**.
-
-	![](./media/new16.png)
-
-1. Review the selected **copilotagentsecurity** group under **Selected member(s)**, and then click **Next** to continue configuring the role assignment settings.
-
-	![](./media/new17.png)
-
 
 ### Task 5: Configure Copilot Studio Authors in Power Platform Admin Center
 
@@ -305,6 +296,8 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 1. In the left navigation pane of **Power Platform admin center**, select **Copilot (1)** > **Settings (2)**, and then select **Entra agent identity for Copilot Studio (3)** to configure agent identity settings.
 
 	 ![](./media/new24.png)
+
+	  >**Note**:If the Entra agent identity for Copilot Studio is not available, please proceed to the next task , its by default enabled for you .
 
 4. On the **Entra Agent Identity for Copilot Studio** panel, select the **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>** environment from the environment list and Select **Edit setting**.
 
@@ -562,6 +555,26 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/image89.png)
 
+1. Select **Availability options**.
+
+	![](./media/new39a.png)
+
+1. On the **Microsoft 365 and Microsoft Teams** page, select **Show to everyone in my org**.
+
+	![](./media/new40.png)
+
+1. Select **Submit to org catalog**.
+
+	![](./media/L00-E2-T1-S22.png)
+
+1. On the **Give everyone access to this agent?** confirmation dialog, select **Yes**.
+
+	![](./media/L00-E2-T1-S23.png)
+
+1. You will be redirected to **Show in Teams app store for org** and see a notification: **Your agent is submitted and waiting for approval from your Teams admin**. Click on **Close**.
+
+	![](./media/new39b.png)
+
 ### Task 3: Create the Zava IT Support Agent
 
 1. In the left navigation pane, select **Agents**. Then select **Create blank agent**.
@@ -693,9 +706,9 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 1. Open a new tab and paste the **Operations site URL** that you copied in **Exercise 0,Step 17-18** in the following format: 
 
-   	```
-	https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID" enableCopy="false"></inject>
-	```
+   	 ```
+	 https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID"  enableCopy="false"></inject>
+	 ```
 
 1. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
    

@@ -23,7 +23,7 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 
 ## Exercise 1: Create Custom Security Attributes for Agent Governance
 
-### Task 1: Assign the Attribute Definition Administrator Role
+### Task 1: Assign the Attribute Definition and assignment Administrator Role
 
 1. Open a browser and navigate to **Microsoft Entra admin center** using the below URL. Sign in with **ODL User** credentials if prompted. 
 
@@ -39,25 +39,29 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 	
 	![](./media/l3-1.png)
 
-1. Under **Select member(s)**, select **No member selected** to choose the user or group to assign to the **Attribute Definition Administrator** role.
+1. On the **Add assignments** pane, select **ODL_User (1)** from the list, then click **Add (2)**.
 
 	![](./media/l3-2.png)
 
-1. In the **Select a member** pane, search for your **ODL_User<inject key="Deployment ID" enableCopy="false"></inject> (1)**, select the **user (2)** from the results, and then select **Select (3)**.
-
-	![](./media/l3-3.png)
-
-1. Verify that your lab user account appears under **Selected member(s)**, and then select **Next**.
-
-	![](./media/l3-4.png)
-
-1. Select the assignemnt type as **Active (1)** , make sure **Permanently assigned** is enabled and enter **Active (2)** in the Justification field. Then click on **Assign (3)**.
-
-	![](./media/l3-5.png)
-
-1. Verify that your lab user account appears under the **Active assignments** tab for the **Attribute Definition Administrator** role before proceeding to the next task.
+1. Verify that your lab user has **Attribute Definition Administrator** role before proceeding to the next task.
 
 	![](./media/l3-6.png)
+
+1. In **Roles & admins (1)** search for **Attribute Assignment Administrator (3)** and select the **Attribute Assignment Administrator (4)** role from the results.
+
+	![](./media/new1.png)
+
+1. On the **Attribute Assignment Administrator | Assignments** page, select **+ Add assignments**.
+	
+	![](./media/new2.png)
+
+1. On the **Add assignments** pane, select **ODL_User (1)** from the list, then click **Add (2)**.
+
+	![](./media/new3.png)
+
+1. Verify that your lab user has **Attribute Assignment Administrator** role before proceeding to the next task.
+
+	![](./media/new4.png)
 
 ### Task 2: Create the AgentAttributes Attribute Set
 
@@ -182,7 +186,6 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 
 1. Under **Exclude (1)**, select **Select agent identities (2)** to specify the agent identities that should be excluded from this policy, then click on **None (1)** under **Select based on attributes (3)**.
 
-
 	![](./media/l3-19.png)
 
 1. In the **Edit filter** pane, set the **Configure** to **Yes (1)**, select **AgentApprovalStatus (1)**, set the operator to **Contains (2)**, enter **HR_Approved (3)** as the value, and then select **Done (3)** to confirm the exclusion configuration.
@@ -268,6 +271,10 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 1. Navigate back to **Policies** and click on **Zava - Block Unapproved Agent Identities**
 
 	![](./media/ex3-4.png)
+
+1. On the **Policy details** blade, review the **Zava - Block Unapproved Agent Identities** policy configuration, then click **View or Edit** to modify the policy.
+
+	![](./media/new5.png)
 
 2. Under **Enable policy**, select **On**.
 
