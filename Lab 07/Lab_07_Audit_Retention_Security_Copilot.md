@@ -105,18 +105,18 @@ Patti Fernandes will investigate audit records with the Zava HR Assistant, revie
 
    - **Start date:** Select today's date minus 7 days.
    - **End date:** Select today's date.
-   - **Activities – friendly names:** Enter `Copilot activities` and select **Interacted with Copilot** from the dropdown.
+   - **Activities – friendly names:** select **Interacted with Copilot** from the dropdown.
    - **Users:** Enter `Patti Fernandes` and select account from the results.
 
 4. Select **Search**.
 
-	![](./media/l07-e2-t1-s4.png)
+	![](./media/neww7.png)
+
+    >**Note**: It can take up to 24 hours to return the audit results.
 
 5. Wait for the search job to complete.
 
 6. Review the results returned for Patti Fernandes's Copilot interactions.
-
-
 
 ### Task 2: Review a CopilotInteraction Audit Record in Detail [Optional]
 

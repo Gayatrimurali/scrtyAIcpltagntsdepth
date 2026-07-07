@@ -387,6 +387,9 @@ In this lab, you will enable sensitivity label support for SharePoint and OneDri
    - `Zava_Payroll_Q1_2025.xlsx`
    - `Zava_Sick_Leave_Report.xlsx`
    - `Zava_Termination_Checklist.docx`
+   - `Zava_HR_Policy_2024.docx`
+   - `Zava_Onboarding_Guide.docx`
+   - `Zava_Org_Chart.docx`
 
 7. Confirm that all four files show **Zava-Confidential/HR-Data** in the **Sensitivity** column.
 
