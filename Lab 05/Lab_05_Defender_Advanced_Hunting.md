@@ -123,11 +123,11 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 
    ![](./media/l05-e2-t1-s2.png)
 
-4. Scroll down and find **Copilot Studio** and click on **Connect** to begin the integration setup.
+4. click on **Copilot Studio** from the list to connect it.
 
    ![](./media/l05-e2-t1-s4.png)
 
-5. In the Copilot Studio real-time protection pane, verify that Real-time protection is enabled and review the generated Power Platform Integration URL.
+5. In the Copilot Studio real-time protection pane, verify that **Real-time protection** is **enabled** and review the generated Power Platform Integration URL.
 
    ![](./media/l05-e2-t1-s5.png)
 
@@ -335,9 +335,9 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 
    ![](./media/l5e4t2s6.png)
 
-## Exercise 5: Review the Defender Alerts Queue for Agent-Related Activity [Optional]
+## Exercise 5: Review the Defender Alerts and Incidents
 
-### Task 1: Filter the Alerts Queue by Cloud Apps Source
+### Task 1: Review the Defender Alerts
 
 1. Remain signed in as **Patti Fernandes** in the Microsoft Defender portal.
 
@@ -345,15 +345,13 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 
 1. Select **Alerts**.
 
-1. On the **Alerts** page, select **Add filter**.
+   ![](./media/neww8.png)
 
-1. In the filter dropdown, select **Service source**.
+1. Review the alerts returned.
 
-1. Select **Microsoft Defender for Cloud Apps** as the filter value.
+   ![](./media/neww9.png)
 
-1. Select **Apply**.
-
-1. Review the alerts returned in the filtered view.
+    >**Note**: Make sure no filter is applied
 
 1. If any alerts are present, select an alert to open its detail panel.
 
@@ -366,29 +364,33 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
     - **Detection source**
     - **Activity log**
 
+      ![](./media/neww12.png)
+
 1. Close the alert detail panel.
 
     > **Note:** In a newly configured lab environment, the Cloud Apps alerts queue may be empty or contain only connector-related events. Agent-related alerts will begin appearing as the Zava agents are invoked, real-time protection signals are generated, and policy violations occur across Day 2 and Day 3 labs. This step establishes familiarity with the alerts queue that Patti will use for incident investigation in Day 3.
 
-### Task 2: Check for Any Agent-Specific Incidents [Optional]
+### Task 1: Review the Defender Incidents
 
 1. In the left navigation pane, select **Incidents & alerts**.
 
 2. Select **Incidents**.
 
-3. On the **Incidents** page, in the search bar, enter `Zava`.
+   ![](./media/neww10.png)
 
-4. Review any incidents returned that reference Zava agent activity.
+4. Review the incidents available .
+
+   ![](./media/neww11.png)
+
+    >**Note**: Make sure **No filters** are applied
 
 5. If an incident is present, select it to open the incident detail page.
 
-6. On the incident detail page, review the **Alerts** tab to see all alerts grouped into the incident.
+   ![](./media/neww14.png)
 
-7. Review the **Evidence and response** tab to see affected entities.
+7. Review the **Details** details of the incidents.
 
-8. Close the incident and return to the **Incidents** page.
-
-   > **Note:** If no Zava-related incidents appear, this is expected at this stage of the course. Note the search and filter techniques demonstrated here - they will be used in Day 3 when active threat investigation tasks are introduced.
+   ![](./media/neww13.png)
 
 ## Summary
 

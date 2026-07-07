@@ -167,11 +167,9 @@ You will launch a custom data risk assessment against the Zava HR and Finance Sh
     - **HR<inject key="Deployment ID" enableCopy="false"></inject>**
     - **Operations<inject key="Deployment ID" enableCopy="false"></inject>**
 
-14. Select **Done** to confirm the site selection.
+14. Select **Done** twice to confirm the site selection.
 
 	![](./media/l06-e1-t2-s14.png)
-
-	![](./media/l06-e1-t2-s14.1.png)
 
 15. Make sure only **SharePoint** is enabled and click **Next**.
 
@@ -262,7 +260,7 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
 	![](./media/l06-e3-t1-s3.png)
 
-
+    >**Note**:You might not see proper dashboard metrics on the **Posture** dashboard in Microsoft Purview DSPM, as this is a fresh environment. In your organization, this dashboard will populate with proper metrics over time as data is scanned and classified.
 
 ### Task 2: Activate the Detect Risky AI Usage One-Click Policy
 
@@ -312,8 +310,6 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
 	![](./media/l06-e3-t3-s8.png)
 
-
-
 ## Exercise 4: Review Data Risk Assessment Results and Apply Remediation
 
 > **Note:** Assessments may take some time. You can return to this exercise at the end of the labs if the assessment is still in progress.
@@ -333,8 +329,6 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 3. Confirm the status shows **Completed**. If the status still shows **In progress**, wait for it to complete before continuing.
 
 4. Select **Zava SharePoint Oversharing Assessment** to open the results.
-
-
 
 ### Task 2: Review Overshared Items [Optional]
 
@@ -428,39 +422,33 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
 ### Task 2: Investigate AI Activities in Activity Explorer [Optional]
 
-1. In the left sub-navigation, select **Discover**.
+1. In the left sub-navigation, select **Discover (1)** and click **Activity explorer (2)**.
 
-2. Select **Activity explorer**.
+   ![](./media/neww1.png)
 
 3. On the **Activity explorer** page, select the **AI activities** tab.
 
 4. In the filter bar, select **User** and enter `Patti Fernandes`.
 
-5. Select **Apply** to filter results to Adele's interactions.
+   ![](./media/neww2.png)
 
-6. Review the interaction events listed in the filtered view.
+6. Review the interaction events listed .
 
-7. Select an interaction event that references a sensitive file - for example, one referencing `Zava_Employee_Records.xlsx` or `Zava_Payroll_Q1_2025.xlsx`.
-
-8. On the event detail panel, review the following fields:
-
-    - **Date and time**
-    - **User**
-    - **Activity type**
-    - **AI app**
-    - **File referenced**
-    - **Sensitivity label on file**
-    - **DLP rule matched** - if applicable
-
-9. Note whether the DLP policy **Zava - Block HR Data in M365 Copilot** appears as matched for any of the HR-labelled file interactions.
+   ![](./media/neww3.png)
 
 10. Close the event detail panel.
 
-11. Remove the user filter and apply a filter for **Sensitivity label** set to **Zava-Confidential/HR-Data**.
+11. Remove the user filter 
 
-12. Review the results - these show all AI interactions across the tenant that involved a file carrying the HR-Data label.
+   ![](./media/neww4.png)
 
+1. apply a filter for **Sensitivity label** set to **Zava-Confidential/HR-Data**.
 
+   ![](./media/neww5.png)
+
+12. Review the results
+
+   ![](./media/neww6.png)
 
 ## Summary
 
