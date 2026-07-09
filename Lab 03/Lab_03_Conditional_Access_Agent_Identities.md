@@ -39,6 +39,8 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 	
 	![](./media/l3-1.png)
 
+	 >**Note**: Make sure you are on **Active assignments** tab 
+
 1. On the **Add assignments** pane, select **ODL_User (1)** from the list, then click **Add (2)**.
 
 	![](./media/l3-2.png)
