@@ -215,6 +215,8 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 	![](./media/new14.png)
 
+	 >**Note**: Make sure you are on **Active assignments** tab
+
 1. On the **Add assignments** pane, select **copilotagentsecurity (1)** from the list, then click **Add (2)**.
 
 	![](./media/new15.png)
@@ -265,20 +267,6 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 	![](./media/new21.png)
 
-1. In the navigation pane, select **Licensing**.
-
-1. In the Licensing pane, select Pay-as-you-go plans. The Billing plans page is displayed.
-
-1. Select **New billing plan**. The **New billing plan** pane is displayed.
-
-1. Select **Microsoft 365 Copilot Chat**.
-
-1. In the Name field, provide a name as **zavaplan-<inject key="Deployment ID" enableCopy="false"></inject>** for your new billing plan.
-
-1. From the **Azure subscription** dropdown list, select your **Azure subscription**.
-
-1. From the Resource group dropdown list, select **labvm** resource group. Then select **Save**.
-
 1. On the **Copilot Studio Authors** panel, select the **Edit** icon near security group.
 
 	![](./media/new22.png)
@@ -290,6 +278,20 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 1. Select **Save** to apply the setting.
 
 	![](./media/L00-E1-T5-S6.png)
+
+1. In the navigation pane, select **Licensing**.
+
+1. In the Licensing pane, select Pay-as-you-go plans. The Billing plans page is displayed.
+
+1. Select **New billing plan**. The **New billing plan** pane is displayed.
+
+1. Select **Azure subscription**.
+
+1. In the Name field, provide a name as **zavaplan-<inject key="Deployment ID" enableCopy="false"></inject>** for your new billing plan.
+
+1. From the **Azure subscription** dropdown list, select your **Azure subscription**.
+
+1. From the Resource group dropdown list, select **labvm** resource group. Then select **Save**.
 
 ### Task 6: Enable Entra Agent Identity for Copilot Studio
 
