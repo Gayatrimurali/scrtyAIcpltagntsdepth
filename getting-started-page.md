@@ -1,6 +1,6 @@
 # Implement Agent 365 to observe, govern, and secure Al apps, Copilot & Agents
 
-### Overall Estimated Duration: 8 Hours
+### Overall Estimated Duration: 12 Hours
 
 ## Overview
 
