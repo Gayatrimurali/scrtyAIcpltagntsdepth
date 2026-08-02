@@ -38,9 +38,9 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 	- **Password:** **<inject key="AzureAdUserPassword"></inject>**
 
-1. Click **Show all** in the left navigation pane to expand and display all available administration options in the Microsoft 365 admin center.
+1. Click **Show all** from the left navigation pane to expand and display all available administration options in the Microsoft 365 admin center.
 
-1. In the left navigation pane, select **SharePoint** under **Admin centers**.
+1. From the left navigation pane, select **SharePoint** under **Admin centers**.
 
 	![](./media/L00-E0-S2.png)
 
@@ -78,7 +78,7 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 		![](./media/L00-E0-S8.png)
 
-1. On the **Add site owners and members** blade, verify that **Patti Fernandes (1)** is listed as a member to be added, then click **Finish (2)**.
+1. On the **Add site owners and members** blade, select **Patti Fernandes (1)** by searching her name and selecting it from the dropdown, then click **Finish (2)**.
 
 	![](./media/newww.png)
 
@@ -120,7 +120,7 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 ### Task 1: Sign In and Configure Multi-Factor Authentication
 
-1. Open a browser and navigate to `https://entra.microsoft.com`.
+1. Open a new tab and navigate to `https://entra.microsoft.com`.
 
 2. On the sign-in page, enter the **ODL User** credentials from the **Environment** tab of your lab environment if prompted:
 	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
@@ -229,7 +229,7 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 	 https://admin.powerplatform.microsoft.com
 	 ```
 
-1. Sign in with following  credentials:
+1. Sign in with following  credentials if prompted:
 
 	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
 
@@ -279,19 +279,17 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 	![](./media/L00-E1-T5-S6.png)
 
-1. In the navigation pane, select **Licensing**.
+1. In the navigation pane, select **Licensing (1)**. Select **Billing plans (2)**, click on **New billing plan (3)**. Select **Azure subscription (4)**.
 
-1. In the Licensing pane, select Pay-as-you-go plans. The Billing plans page is displayed.
+1. Select the below and click on **Next (4)** :
+   - In the Name field, provide a name as **zavaplan-<inject key="Deployment ID" enableCopy="false"></inject> (1)** for your new billing plan.
+   - From the **Azure subscription (2)** dropdown list, select your **Azure subscription**.
+   - From the Resource group dropdown list, select **labvm (3)** resource group.
+   
+1. Select the following and click on **Save (3)**:
 
-1. Select **New billing plan**. The **New billing plan** pane is displayed.
-
-1. Select **Azure subscription**.
-
-1. In the Name field, provide a name as **zavaplan-<inject key="Deployment ID" enableCopy="false"></inject>** for your new billing plan.
-
-1. From the **Azure subscription** dropdown list, select your **Azure subscription**.
-
-1. From the Resource group dropdown list, select **labvm** resource group. Then select **Save**.
+   	- Region: **United States (1)**
+   	- Select **DevOne-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
 
 ### Task 6: Enable Entra Agent Identity for Copilot Studio
 
@@ -323,7 +321,7 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 	 https://make.powerapps.com
 	 ```
 
-1. Sign in with following  credentials:
+1. Sign in with following  credentials if prompted:
 
 	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
 
@@ -357,7 +355,7 @@ Every subsequent lab depends on the agents, identities, and files created here. 
    
 	![](./media/L00-E1-T7-S7.png)
 
-1. On the Confirmation required pop-up, check the box for **I have verified this request and trust this source (1)** and select **Allow access (2)**.
+1. If there is a pop-up for Confirmation pops up, check the box for **I have verified this request and trust this source (1)** and select **Allow access (2)**.
 
 	![](./media/pp3.png)
 
@@ -377,7 +375,7 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 	 https://copilotstudio.microsoft.com
 	 ```
 
-1. Sign in with following  credentials:
+1. Sign in with following  credentials if prompted:
 
 	- **Email/Username:** **<inject key="AzureAdUserEmail"></inject>**
 
