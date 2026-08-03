@@ -93,8 +93,7 @@ This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary
     
 	![](./media/l01-e1-t2-s12.png)
 
-1. Repeat the above steps 1 to step 11 for **Zava HR Agent**
-
+1. Repeat step 1 to step 11 for **Zava HR Assistant**.
 
 ### Task 3: Approve an Agent in Teams Admin Center
 
