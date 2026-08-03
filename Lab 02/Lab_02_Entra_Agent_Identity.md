@@ -28,7 +28,7 @@ In this lab, you will locate the Zava agent identities, review their current con
 1. Open a new browser tab and enter the following URL to navigate to the **Microsoft Entra admin center** portal. 
 
     ```
-	 https://admin.microsoft.com
+	 https://entra.microsoft.com/
 	 ```
 
 1. Sign in with following  credentials:
