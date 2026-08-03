@@ -551,7 +551,7 @@ In this exercise, you will creates all three Zava agents in Microsoft Copilot St
 
 	![](./media/new48.png)
 
-15. In the **Ready to publish?** dialog, select **Publish**. Close the tab.
+15. In the **Ready to publish?** dialog, select **Publish**. Close the tab once published.
 
 	![](./media/image89.png)
 
@@ -706,9 +706,9 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 1. Open a new tab and paste the **Operations site URL** that you copied in **Exercise 0,Step 17-18** in the following format: 
 
-   	 ```
-	 https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID"  enableCopy="false"></inject>
-	 ```
+   ```
+   https://[TenantPrefix].sharepoint.com/sites/Operations<inject key="Deployment ID"  enableCopy="false"></inject>
+   ```
 
 1. From the left navigation menu, click on **Documents (1)** , select **Create or upload (2)**. Then, select **Files upload (3)**.
    
@@ -716,19 +716,18 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 1. Browse to **C:\LabFiles\lab file\Operations (1)**, select all the Operations documents and files **(2)**, and then click **Open (3)** to upload them.
 
-	![](./media/new59.png)
-
+	  ![](./media/new59.png)
 
 1. Select the following files and then select **Open** to upload them:
 
-   | Filename | Contains |
-   |----|----|
-   | `Zava_Budget_2025.xlsx` | Department budgets and cost centres |
-   | `Zava_Invoice_Log.xlsx` | Vendor invoices with IBAN and account numbers |
-   | `Zava_Expense_Report_Alex.xlsx` | Alex Wilber's expenses with Visa credit card number |
-   | `Zava_Audit_Report_2024.docx` | Internal audit findings - marked Confidential |
-   | `Zava_Contracts_External.docx` | Third-party vendor contract - externally shared |
-   | `Zava_Financial_Projections.xlsx` | Revenue forecasts with broad SharePoint permissions |
+    | Filename | Contains |
+    |----|----|
+    | `Zava_Budget_2025.xlsx` | Department budgets and cost centres |
+    | `Zava_Invoice_Log.xlsx` | Vendor invoices with IBAN and account numbers |
+    | `Zava_Expense_Report_Alex.xlsx` | Alex Wilber's expenses with Visa credit card number |
+    | `Zava_Audit_Report_2024.docx` | Internal audit findings - marked Confidential |
+    | `Zava_Contracts_External.docx` | Third-party vendor contract - externally shared |
+    | `Zava_Financial_Projections.xlsx` | Revenue forecasts with broad SharePoint permissions |
 
 1. Wait for all 6 files to finish uploading.
 
@@ -771,10 +770,9 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 	```
 1. Sign in with **ODL_User** credentials if prompted.
 
-	- **Email/Username:** <inject key="AzureAdUserEmail"></inject>
-	- **Password:** <inject key="AzureAdUserPassword"></inject>
-
-
+	  - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+	  - **Password:** <inject key="AzureAdUserPassword"></inject>
+	
 1. Select the **Cloud Shell (1)** icon from the top menu, and then choose **PowerShell (2)** as the Cloud Shell environment.
 
 	![](./media/new61.png)
