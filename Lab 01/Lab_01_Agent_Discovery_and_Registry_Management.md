@@ -230,7 +230,7 @@ This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary
 
 3. On the **Audit** page, check whether a banner appears prompting you to start recording user and admin activity.
 
-   - If a banner is displayed, select **Start recording user and admin activity** to enable auditing.
+   - If a banner is displayed, select **Start recording user and admin activity** to enable auditing. Followed with clicking on **Yes** on Complete organizational setup pop up if prompted.
 
 		![](./media/l01-e2-t1-s3.png)
 
@@ -290,7 +290,7 @@ This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary
 
 	- In the **Environment name** field, enter **DevOne-<inject key="Deployment ID" enableCopy="false"></inject>** **(3)**.
 
-	- In the **Managed domains** field, keep it default
+	- In the **Managed domains** field, keep it default **(4)**
 
 	  ![](./media/l1e3t2s2.png)
 
