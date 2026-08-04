@@ -206,9 +206,7 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
    - **Email:** <inject key="User 01 UPN"></inject>
    - **Password:** <inject key="User's Password"></inject>
 
-2. From the navigation, click **All agents** and select **Zava HR Assistant** , click **Add**.
-
-	![](./media/l06-e2-t1-s2.png)
+2. From the navigation, click **More agents** and select **Zava HR Assistant** , click **Open**.
 
 3. In the input field, enter the following prompt:
 
@@ -260,7 +258,9 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
 	![](./media/l06-e3-t1-s3.png)
 
-    >**Note**:You might not see proper dashboard metrics on the **Posture** dashboard in Microsoft Purview DSPM, as this is a fresh environment. In your organization, this dashboard will populate with proper metrics over time as data is scanned and classified.
+    >**Note**: Click on **Get started**, followed with **Start Setup** if prompted.
+
+    >**Note**: You might not see proper dashboard metrics on the **Posture** dashboard in Microsoft Purview DSPM, as this is a fresh environment. In your organization, this dashboard will populate with proper metrics over time as data is scanned and classified.
 
 ### Task 2: Activate the Detect Risky AI Usage One-Click Policy
 
@@ -294,15 +294,15 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
 	![](./media/l06-e3-t3-s2.png)
 
-3. On the data pane, confirm credit card is present in **Sensitive info types**.
+3. On the data pane, confirm credit card is present under **Sensitive information types**.
 
 	![](./media/l06-e3-t3-s3.png)
 
-4. If not present click **+ Add** and Select **Credit Card Number**. Then select **Add**.
+	> **Note:** If not present click **+ Add** and Select **Credit Card Number**. Then select **Add**.
 
-	![](./media/l06-e3-t3-s4.png)
+	  ![](./media/l06-e3-t3-s4.png)
 
-5. Under **Actions**, select **Restrict user prompts from being processed**. Then select **Create policy**.
+5. Under **Actions**, select **Restrict user prompts from being processed**. Then select **Enforce policy**.
 
 	![](./media/l06-e3-t3-s5.png)
 
@@ -324,7 +324,7 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
    ![](./media/l06-e4-t1-s2.png)
 
-   >**Note** - It can take time get Completed maximum upto 24 hours
+   >**Note** - It may take 24 hours to show **Completed**.
 
 3. Confirm the status shows **Completed**. If the status still shows **In progress**, wait for it to complete before continuing.
 
@@ -424,31 +424,31 @@ In this exercise, Patti Fernandes generates realistic Microsoft 365 Copilot inte
 
 1. In the left sub-navigation, select **Discover (1)** and click **Activity explorer (2)**.
 
-   ![](./media/neww1.png)
+   	  ![](./media/neww1.png)
 
 3. On the **Activity explorer** page, select the **AI activities** tab.
 
 4. In the filter bar, select **User** and enter `Patti Fernandes`.
 
-   ![](./media/neww2.png)
+   	  ![](./media/neww2.png)
 
-6. Review the interaction events listed .
+6. Review the interaction events listed.
 
-   ![](./media/neww3.png)
+      ![](./media/neww3.png)
 
 10. Close the event detail panel.
 
-11. Remove the user filter 
+11. Remove the user filter. 
 
-   ![](./media/neww4.png)
+      ![](./media/neww4.png)
 
-1. apply a filter for **Sensitivity label** set to **Zava-Confidential/HR-Data**.
+1. Apply a filter for **Sensitivity label** set to **Zava-Confidential/HR-Data**.
 
-   ![](./media/neww5.png)
+     ![](./media/neww5.png)
 
 12. Review the results
 
-   ![](./media/neww6.png)
+     ![](./media/neww6.png)
 
 ## Summary
 
