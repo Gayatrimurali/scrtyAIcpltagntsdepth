@@ -775,11 +775,11 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 	
 1. Select the **Cloud Shell (1)** icon from the top menu, and then choose **PowerShell (2)** as the Cloud Shell environment.
 
-	![](./media/new61.png)
+	  ![](./media/new61.png)
 
 1. In the **Getting started** pane, select **No storage account required (1)**, select **your subscription (2)**, and then select **Apply (3)**.
 
-	![](./media/new62.png)
+	  ![](./media/new62.png)
 
 1. After the Cloud Shell session is ready and displays the PowerShell prompt, run the following command to disconnect the current Exchange Online session
 
@@ -787,7 +787,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
     Disconnect-ExchangeOnline -Confirm:$false	
 	```
 
-	![](./media/ex-2.png)
+	  ![](./media/ex-2.png)
 
 1. Connect to Exchange Online Using Device Authentication
 by running the following command to initiate a new Exchange Online connection using device authentication:
@@ -796,13 +796,13 @@ by running the following command to initiate a new Exchange Online connection us
     Connect-ExchangeOnline -Device
     ```
 
-	![](./media/ex-3.png)
+	  ![](./media/ex-3.png)
 
     - Note: A device code and sign-in URL will be displayed. Open the URL and paste the code to complete the authentication
 
-	    ![](./media/ex-4.png)
+	     ![](./media/ex-4.png)
 
-		![](./media/ex-7.png)
+		 ![](./media/ex-7.png)
 
 1. After the Exchange Online PowerShell session is successfully connected, run the following command to prepare the Exchange Online organization for advanced configuration tasks:
 
@@ -810,11 +810,11 @@ by running the following command to initiate a new Exchange Online connection us
     Enable-OrganizationCustomization
 	```
 
-	![](./media/ex-8.png)
+	  ![](./media/ex-8.png)
 
-     >**Note**: This may take upto 24 hours to get organization custimaztion enabled.
+      > **Note**: This may take upto 24 hours to get organization custimaztion enabled.
 
-     > **Note:** If the message **"This operation is not required. Organization is already enabled for customization."** appears, no further action is needed and you can proceed to the next lab.
+      > **Note:** If the message **"This operation is not required. Organization is already enabled for customization."** appears, no further action is needed and you can proceed to the next lab.
 
 	  ![](./media/new63.png)	 
 
