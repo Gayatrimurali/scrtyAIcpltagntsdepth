@@ -74,22 +74,21 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 
 1. Select the Cloud Shell icon from the upper-right corner of the page to launch an Azure Cloud Shell session.
 
-   ![](./media/appid.png)
+    ![](./media/appid.png)
 
-    >**Note**: If prompted, complete the Cloud Shell initialization before proceeding
+      > **Note**: If prompted, complete the Cloud Shell initialization before proceeding
 
-1. Click on **Manage Files** and select **Upload** 
+1. Click on **Manage Files** and select **Upload**. 
 
-    ![](./media/appid2.png)
+      ![](./media/appid2.png)
 
     - In the **C:\LabFiles (1)** folder, select the **Create-CopilotWebhookApp.ps1 (2)** script and then select **Open (3)**.
 
-       ![](./media/l3-49.png)
+         ![](./media/l3-49.png)
     
     - Make sure script is uploaded by the confirmation pop-up
 
-       ![](./media/appid3.png)
-
+         ![](./media/appid3.png)
 
 1. Execute the following command in the cloudshell :
 
@@ -97,25 +96,27 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
     .\Create-CopilotWebhookApp.ps1 -TenantId "<Paste your TenantId>" -Endpoint "https://mcsaiagents.security.core.microsoft/v1/protection" -DisplayName "Copilot Security Integration - Production" -FICName "ProductionFIC"
     ```
 
-    >**Note:** Replace the **TenantId** in the command before running it in the clodshell. Follow the steps below to copy the Tenant ID: 
+      > **Note:** Replace the **TenantId** in the command before running it in the clodshell. Follow the steps below to copy the Tenant ID: 
 
-     - Navigate **Microsoft Entra ID** on the azure portal
+     - Navigate **Microsoft Entra ID** on the azure portal.
 
-        ![](./media/appid4.png)
+          ![](./media/appid4.png)
 
-      - Copy **Tenant ID** to use in the command
+      - Copy **Tenant ID** to use in the command.
 
-        ![](./media/appid5.png)
+          ![](./media/appid5.png)
 
-   ![](./media/appid6.png)
+          ![](./media/appid6.png)
 
-1. Navigate to the link and paste the code to complete the authentication
+1. Click on **Y** when prompted for any installations.
 
-   ![](./media/appid7.png)
+1. Navigate to the link and paste the code to complete the authentication. Click on **Accept** when prompted for permissions.
+
+     ![](./media/appid7.png)
 
 1. Copy the **App ID** and paste it in the **Notepad** as it will be used in task while connecting Copilot and Defender.
 
-   ![](./media/appid8.png)
+    ![](./media/appid8.png)
 
 ### Task 2: Connect Defender and Copilot studio
 
@@ -123,7 +124,7 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 
    ![](./media/l05-e2-t1-s2.png)
 
-4. click on **Copilot Studio** from the list to connect it.
+4. Click on **Copilot Studio** from the list to connect it.
 
    ![](./media/l05-e2-t1-s4.png)
 
@@ -165,18 +166,15 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 
    ![](./media/l5e2t2s5.png)  
 
-1. Select your **Dev** environment and click **Setup**
+1. Select your **Dev** environment and click on **Set up**.
 
    ![](./media/l5e2t2s6.png)
 
-1. Enable the checkbox for **Allow Copilot Studio to share data with a threat detection partner** and enter the **Azure Entra App ID** and **Endpoint link** and click **save**
+1. Enable the checkbox for **Allow Copilot Studio to share data with a threat detection partner** and enter the **Azure Entra App ID** and **Endpoint link** which you copied earlier and click on **Save**.
 
    ![](./media/l5e2t2s7.png)
    
-   >**Note:** Get Endpoint link and Entra App Id from the defender portal.
-
-      ![](./media/l05-e2-t1-s6.png)
-
+1. Once connected, click on **Close**.
 
 ### Task 3: Confirm Connected Status in the Defender Portal
 
