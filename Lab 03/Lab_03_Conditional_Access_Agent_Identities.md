@@ -371,6 +371,8 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 
 	![](./media/l3-37.png)
 
+	>**Note:** If the option **Add** is present, select it and click on **Open**.
+
 1. In the chat input field, enter the following:
 
    ```
