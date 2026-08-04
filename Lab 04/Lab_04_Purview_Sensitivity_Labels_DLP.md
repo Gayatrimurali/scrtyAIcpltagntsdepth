@@ -41,6 +41,8 @@ In this lab, you will enable sensitivity label support for SharePoint and OneDri
 
 	![](./media/l04-e1-t1-s2.png)
 
+     > **Note:** It might take few moments to set up, do refresh the page in case the option is not visible.
+
 1. On the **Information Protection settings** page, select the **Co-authoring for files with sensitivity labels** tab.
 
 1. Select the checkbox for **Turn on co-authoring for files with sensitivity labels** if not already turned on.
