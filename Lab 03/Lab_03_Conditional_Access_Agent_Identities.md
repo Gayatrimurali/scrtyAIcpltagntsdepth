@@ -39,17 +39,19 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 	
 	![](./media/l3-1.png)
 
-	 >**Note**: Make sure you are on **Active assignments** tab 
+	 >**Note**: Make sure you are on **Active assignments** tab. 
 
-1. On the **Add assignments** pane, select **ODL_User (1)** from the list, then click **Add (2)**.
+1. On the **Add assignments** pane, click on **No member selected** under Select member(s).
+
+1. On the **Select a member** pane, select **ODL_User (1)** from the list, then click **Select (2)**.
 
 	![](./media/l3-2.png)
 
-1. Verify that your lab user has **Attribute Definition Administrator** role before proceeding to the next task.
+1. Click on **Next** followed with **Assign**. 
 
-	![](./media/l3-6.png)
+1. Verify that your lab user has **Attribute Definition Administrator** role active under **Eligible assignments** before proceeding to the next task.
 
-1. In **Roles & admins (1)** search for **Attribute Assignment Administrator (3)** and select the **Attribute Assignment Administrator (4)** role from the results.
+1. Navigate back to **Roles & admins (1)** search for **Attribute Assignment Administrator (3)** and select the **Attribute Assignment Administrator (4)** role from the results.
 
 	![](./media/new1.png)
 
@@ -57,9 +59,13 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 	
 	![](./media/new2.png)
 
-1. On the **Add assignments** pane, select **ODL_User (1)** from the list, then click **Add (2)**.
+1. On the **Add assignments** pane, click on **No member selected** under Select member(s).
+
+1. On the **Select a member** pane, select **ODL_User (1)** from the list, then click **Select (2)**.
 
 	![](./media/new3.png)
+
+1. Click on **Next** followed with **Assign**. 
 
 1. Verify that your lab user has **Attribute Assignment Administrator** role before proceeding to the next task.
 
@@ -194,9 +200,7 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 
 	![](./media/l3-20.png)
 
-1. Under **Exclude**, click on **None** under **Select individual agent identities**.
-
-	![](./media/n1.png)
+1. Under **Exclude**, click on **None** under **Select individual agents**.
 
 1. Select **Zava HR Assistant (1)** and click on **Select (2)** 
 
@@ -307,9 +311,7 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 
 4. Under **What does this policy apply to?**, select **Agents**.
 
-5. Under **Include**, select **All agent identities (Preview)**.
-
-	![](./media/ex3-6.png)
+5. Under **Include**, select **All agent identities**.
 
 6. Under **Target resources**, select **No target resources selected**, then select **All resources (formerly 'All cloud apps')**.
 
