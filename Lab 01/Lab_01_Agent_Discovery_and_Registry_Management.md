@@ -234,6 +234,8 @@ This lab introduces the Microsoft 365 Admin Center Agent Registry as the primary
 
 		![](./media/l01-e2-t1-s3.png)
 
+     	![](../media/pur7.png)
+
    - If no banner is displayed, auditing is already enabled. Proceed to the next step.
 
 1. Configure the search with the following values:
