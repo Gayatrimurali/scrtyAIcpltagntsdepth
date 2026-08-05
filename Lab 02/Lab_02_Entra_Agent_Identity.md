@@ -132,9 +132,9 @@ In this lab, you will locate the Zava agent identities, review their current con
 
    ![](./media/ex2-1.png)
 
-1. Click on Continue with Microsoft.
+1. Click on Sign in with Microsoft.
 
-	![](./media/ex2-2.png)
+     ![](../media/pur8.png)
 
 1. Sign in with **ODL User** credentials from the **Environment** tab.
 
