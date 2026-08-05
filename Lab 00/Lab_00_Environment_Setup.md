@@ -771,7 +771,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 ## Exercise 4: Enable Organizational Setup
 
-1. Navigate to **Exchange Admin Center** using the below URL
+1. Navigate to **Exchange Admin Center** using the below URL:
 
     ```
     https://admin.cloud.microsoft/exchange
@@ -797,8 +797,7 @@ In this exercise, you will uploads the Zava sample business documents to the Sha
 
 	  ![](./media/ex-2.png)
 
-1. Connect to Exchange Online Using Device Authentication
-by running the following command to initiate a new Exchange Online connection using device authentication:
+1. Connect to Exchange Online Using Device Authentication by running the following command to initiate a new Exchange Online connection using device authentication:
 
     ```
     Connect-ExchangeOnline -Device
@@ -811,6 +810,10 @@ by running the following command to initiate a new Exchange Online connection us
 	     ![](./media/ex-4.png)
 
 		 ![](./media/ex-7.png)
+
+		> **Important:** If there are any errors thrown in the CloudShell, navigate to the Azure Portal Cloudshell & re-run the commands.
+
+		 ![](../media/pur12.png)
 
 1. After the Exchange Online PowerShell session is successfully connected, run the following command to prepare the Exchange Online organization for advanced configuration tasks:
 
