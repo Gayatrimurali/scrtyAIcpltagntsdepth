@@ -110,6 +110,8 @@ Zava's SOC team has been asked to confirm that all deployed AI agents are visibl
 
 1. Click on **Y** when prompted for any installations.
 
+     ![](./media/pur1.png)
+
 1. Navigate to the link and paste the code to complete the authentication. Click on **Accept** when prompted for permissions.
 
      ![](./media/appid7.png)
