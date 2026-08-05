@@ -40,6 +40,8 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 1. Click **Show all** from the left navigation pane to expand and display all available administration options in the Microsoft 365 admin center.
 
+     ![](../media/pur30.png)
+
 1. From the left navigation pane, select **SharePoint** under **Admin centers**.
 
 	![](./media/L00-E0-S2.png)
@@ -281,15 +283,21 @@ Every subsequent lab depends on the agents, identities, and files created here. 
 
 1. In the navigation pane, select **Licensing (1)**. Select **Billing plans (2)**, click on **New billing plan (3)**. Select **Azure subscription (4)**.
 
+     ![](../media/pur4.png)
+
 1. Select the below and click on **Next (4)** :
    - In the Name field, provide a name as **zavaplan-<inject key="Deployment ID" enableCopy="false"></inject> (1)** for your new billing plan.
    - From the **Azure subscription (2)** dropdown list, select your **Azure subscription**.
    - From the Resource group dropdown list, select **labvm (3)** resource group.
-   
+
+     	![](../media/pur5.png)
+
 1. Select the following and click on **Save (3)**:
 
    	- Region: **United States (1)**
    	- Select **DevOne-<inject key="Deployment ID" enableCopy="false"></inject> (2)**
+
+     	![](../media/pur6.png)
 
 ### Task 6: Enable Entra Agent Identity for Copilot Studio
 
