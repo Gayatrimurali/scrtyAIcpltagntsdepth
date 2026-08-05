@@ -47,9 +47,15 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 
 	![](./media/l3-2.png)
 
-1. Click on **Next** followed with **Assign**. 
+1. Click on **Next**. 
 
-1. Verify that your lab user has **Attribute Definition Administrator** role active under **Eligible assignments** before proceeding to the next task.
+     ![](../media/pur10.png)
+
+1. Check the box for **Active (1)**, provide a justification saying **Role required (2)** and click on **Assign (3)**.
+
+     ![](../media/pur13.png)
+
+1. Verify that your lab user has **Attribute Definition Administrator** role active under **Active assignments** before proceeding to the next task.
 
 1. Navigate back to **Roles & admins (1)** search for **Attribute Assignment Administrator (3)** and select the **Attribute Assignment Administrator (4)** role from the results.
 
@@ -65,13 +71,19 @@ Conditional Access for Agent Identities is a preview capability in Microsoft Ent
 
 	![](./media/new3.png)
 
-1. Click on **Next** followed with **Assign**. 
+1. Click on **Next**. 
+
+     ![](../media/pur10.png)
+
+1. Check the box for **Active (1)**, provide a justification saying **Role required (2)** and click on **Assign (3)**.
+
+     ![](../media/pur13.png) 
 
 1. Verify that your lab user has **Attribute Assignment Administrator** role before proceeding to the next task.
 
 	![](./media/new4.png)
 
-### Task 2: Create the AgentAttributes Attribute Set
+### Task 2: Create the Agent Attributes Attribute Set
 
 1. Expand **Entra ID (1)** in navigation pane, select **Custom security attributes (2)**, and then select **+ Add attribute set (3)**.
 
